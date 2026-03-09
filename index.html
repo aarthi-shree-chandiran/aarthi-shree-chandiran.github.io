@@ -130,6 +130,15 @@
 
       .grid-2 {
         grid-template-columns: 1fr;
+        .profile-photo {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid white;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+}
       }
     }
   </style>
@@ -137,6 +146,7 @@
 <body>
 
   <section class="hero">
+    <img src="profile.jpg" alt="Aarthi Shree Chandiran" class="profile-photo">
     <h1>Aarthi Shree Chandiran</h1>
     <p>Azure Certified IT Professional | Cloud Infrastructure | IT Support</p>
     <p class="small">Berlin, Germany | Open to Cloud, Azure Administration, and IT Operations roles in Germany</p>
