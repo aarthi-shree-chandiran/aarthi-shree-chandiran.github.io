@@ -178,10 +178,34 @@
 .skill-box h3 {
   margin-top: 0;
 } 
+    .navbar {
+  background: #0f172a;
+  padding: 14px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: 600;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
   </style>
 </head>
 <body>
-
+<nav class="navbar">
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#experience">Experience</a>
+  <a href="#contact">Contact</a>
+</nav>
   <section class="hero">
     <img src="profile.jpg" alt="Aarthi Shree Chandiran" class="profile-photo">
     <h1>Aarthi Shree Chandiran</h1>
@@ -204,7 +228,7 @@
     cloud-focused environments.
   </p>
 </section>
-    <section class="card">
+    <section class="card" id="about">
       <h2>About Me</h2>
       <p>
         Azure-certified IT professional with experience in system support, troubleshooting, software testing, and SLA-driven operations. I have hands-on exposure to Azure infrastructure services including Virtual Machines, Virtual Networks, Network Security Groups, RBAC, Azure Monitor, and Azure Backup.
@@ -234,7 +258,7 @@
   </p>
 </section>
 
-    <section class="card">
+   <section class="card" id="skills">
       <h2>Technical Skills</h2>
       <div class="grid-2">
         <div>
@@ -266,7 +290,7 @@
       </div>
     </section>
 
-    <section class="card">
+    <section class="card" id="projects">
   <h2>Featured Projects</h2>
 
   <div class="job">
@@ -300,7 +324,7 @@
 
 </section>
 
-    <section class="card">
+    <section class="card" id="experience">
       <h2>Professional Experience</h2>
 
       <div class="job">
@@ -351,7 +375,7 @@
       <h2>Languages</h2>
       <p>English (B2) | German (A2) | Tamil (Native) | Malayalam (Conversational) | Hindi (Basic)</p>
     </section>
-<section class="card">
+<section class="card" id="projects">
   <h2>GitHub & Project Work</h2>
   <p>
     I am building my portfolio in cloud infrastructure, automation, and IT operations.
@@ -380,7 +404,7 @@
   </p>
 
 </section>
-    <section class="card">
+    <section class="card" id="contact">
   <h2>Contact & Professional Links</h2>
   <p><strong>Email:</strong> <a href="mailto:aarthishreechandiran@gmail.com">aarthishreechandiran@gmail.com</a></p>
   <p><strong>Phone:</strong> +49 176 74199920</p>
