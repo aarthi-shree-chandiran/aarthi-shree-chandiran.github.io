@@ -267,6 +267,31 @@ border:0;
 height:1px;
 background:#e5e7eb;
 }
+    .project-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+margin-top:20px;
+}
+
+.project-card img{
+width:100%;
+border-radius:10px;
+margin-top:10px;
+}
+
+.tech{
+margin-top:10px;
+font-size:14px;
+color:#2563eb;
+font-weight:600;
+}
+
+@media (max-width:768px){
+.project-grid{
+grid-template-columns:1fr;
+}
+}
   </style>
 </head>
 <body>
@@ -401,34 +426,53 @@ Berlin, Germany | Open to Azure Administrator, Cloud Support, and IT Infrastruct
     <section class="card" id="projects">
   <h2>☁️ Featured Projects</h2>
 
-  <div class="project-card">
-    <h3>Azure Infrastructure Deployment</h3>
-    <p>
-      Built a secure Azure environment using Virtual Machines, Virtual Networks,
-      subnets, and Network Security Groups. Applied Role-Based Access Control (RBAC)
-      to manage secure access to resources.
-    </p>
-    <p><strong>Key Skills:</strong> Azure VM, VNet, NSG, RBAC</p>
-    <img src="azure-vm-architecture.png" alt="Azure VM Architecture Diagram" style="width:100%; border-radius:12px; margin-top:12px;">
-  </div>
+<div class="project-grid">
 
-  <div class="project-card">
-    <h3>Azure Monitoring & Backup</h3>
-    <p>
-      Configured Azure Monitor to track availability, performance, and resource health.
-      Set up backup and recovery processes to support operational continuity and data protection.
-    </p>
-    <p><strong>Key Skills:</strong> Azure Monitor, Azure Backup, Troubleshooting</p>
-  </div>
+<div class="project-card">
 
-  <div class="project-card">
-    <h3>Selenium Automation Framework</h3>
-    <p>
-      Developed reusable Selenium automation scripts for functional and regression testing.
-      Improved test coverage and reduced manual testing effort through automation.
-    </p>
-    <p><strong>Key Skills:</strong> Selenium, QA Automation, Regression Testing</p>
-  </div>
+<h3>☁️ Azure Infrastructure Deployment</h3>
+
+<p>
+Designed and deployed Azure Virtual Machines inside a secure Virtual Network with subnets and Network Security Groups. Implemented RBAC for secure access control and monitored resources using Azure Monitor.
+</p>
+
+<img src="azure-vm-architecture.png" alt="Azure Architecture Diagram">
+
+<p class="tech">
+Azure VM • VNet • NSG • RBAC • Azure Monitor
+</p>
+
+</div>
+
+<div class="project-card">
+
+<h3>📊 Azure Monitoring & Backup</h3>
+
+<p>
+Configured Azure Monitor to track resource performance and health. Implemented backup and recovery processes using Azure Backup to ensure data protection and operational reliability.
+</p>
+
+<p class="tech">
+Azure Monitor • Azure Backup • Monitoring • Troubleshooting
+</p>
+
+</div>
+
+<div class="project-card">
+
+<h3>⚙️ Selenium Automation Framework</h3>
+
+<p>
+Built reusable Selenium automation scripts for functional and regression testing. Improved test coverage and reduced manual testing effort through automation.
+</p>
+
+<p class="tech">
+Selenium • Automation Testing • QA
+</p>
+
+</div>
+</div>
+
 </section>
 
     <section class="card" id="experience">
