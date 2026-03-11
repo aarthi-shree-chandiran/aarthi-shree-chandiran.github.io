@@ -297,6 +297,17 @@ padding:110px 20px;
 background:linear-gradient(135deg,#0f172a,#1e3a8a);
 color:white;
 }
+    .two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+@media (max-width: 768px) {
+  .two-column {
+    grid-template-columns: 1fr;
+  }
+}
   </style>
 </head>
 <body>
@@ -510,33 +521,56 @@ Selenium • Automation Testing • QA
       </div>
     </section>
 
-    <section class="card">
-      <h2>🎓 Certifications & Education</h2>
-      <h3>Certifications</h3>
-      <ul>
-        <li>Microsoft Azure Fundamentals (AZ-900)</li>
-        <li>Microsoft Azure Administrator (AZ-104) — Exam Scheduled</li>
-      </ul>
+    <section class="card two-column">
 
-      <h3>Education</h3>
-      <ul>
-        <li>Master in IT Management — Berlin School of Business and Innovation</li>
-        <li>Bachelor of Computer Science and Engineering — Anna University</li>
-      </ul>
-    </section>
-<section class="card">
-  <h2>📘 Currently Learning</h2>
-  <ul>
-    <li>Microsoft Azure Administrator (AZ-104)</li>
-    <li>Azure Networking and Security</li>
-    <li>Cloud Infrastructure Monitoring</li>
-    <li>Identity and Access Management in Azure</li>
-  </ul>
+<div>
+<h2>🎓 Certifications</h2>
+
+<ul>
+<li>Microsoft Azure Fundamentals (AZ-900)</li>
+<li>Azure Administrator (AZ-104) – In Progress</li>
+</ul>
+</div>
+
+<div>
+<h2>🎓 Education</h2>
+
+<ul>
+<li>M.Sc. IT Management – Berlin School of Business and Innovation</li>
+<li>B.E. Computer Science – Anna University</li>
+</ul>
+</div>
+
 </section>
-    <section class="card">
-      <h2>Languages</h2>
-      <p>English (B2) | German (A2) | Tamil (Native) | Malayalam (Conversational) | Hindi (Basic)</p>
-    </section>
+<section class="card two-column">
+
+<div>
+<h2>🌍 Languages</h2>
+
+<p>
+English (B2)<br>
+German (A2)<br>
+Tamil (Native)<br>
+Malayalam (Conversational)<br>
+Hindi (Basic)
+</p>
+
+</div>
+
+<div>
+
+<h2>📘 Currently Learning</h2>
+
+<ul>
+<li>Microsoft Azure Administrator (AZ-104)</li>
+<li>Azure Networking and Security</li>
+<li>Cloud Infrastructure Monitoring</li>
+<li>Identity and Access Management in Azure</li>
+</ul>
+
+</div>
+
+</section>
 <section class="card" id="projects">
   <h2>GitHub & Project Work</h2>
  <p>
