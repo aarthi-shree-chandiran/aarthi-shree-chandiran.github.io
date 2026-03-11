@@ -3,57 +3,111 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio of Aarthi Shree Chandiran, Azure Certified IT Professional based in Berlin specializing in cloud infrastructure, Azure administration, and IT operations.">
-  <meta name="keywords" content="Aarthi Shree Chandiran, Azure Administrator, Cloud Engineer, IT Support, Azure Portfolio, Berlin IT Professional">
-  <meta name="google-site-verification" content="nPuli7Xnbtb6JUiQjQG8ZO-YMeikQ00FgMsj4ODPrCw" />
   <title>Aarthi Shree Chandiran | Azure Administrator Portfolio</title>
-  <meta name="description" content="Azure Certified IT Professional in Berlin specializing in cloud infrastructure, IT support, and Azure administration." />
+  <meta name="description" content="Portfolio of Aarthi Shree Chandiran, Azure Certified IT Professional based in Berlin specializing in cloud infrastructure, Azure administration, and IT operations.">
+
   <style>
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f4f7fb;
-      color: #1f2937;
+      background: #f8fafc;
+      color: #0f172a;
       line-height: 1.6;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(15, 23, 42, 0.96);
+      backdrop-filter: blur(8px);
+      padding: 16px 32px;
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
     }
 
     .hero {
       background: linear-gradient(135deg, #0f172a, #1d4ed8);
       color: white;
-      text-align: center;
-      padding: 70px 20px;
+      padding: 80px 24px;
     }
 
-    .hero h1 {
-      margin: 0;
-      font-size: 40px;
+    .hero-container {
+      max-width: 1180px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.3fr 0.9fr;
+      gap: 60px;
+      align-items: center;
     }
 
-    .hero p {
-      margin: 12px 0;
-      font-size: 18px;
+    .hero-text h1 {
+      margin: 0 0 12px;
+      font-size: 46px;
+      line-height: 1.1;
     }
 
-    .hero .small {
-      font-size: 16px;
+    .hero-text .role {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .hero-text .summary {
+      font-size: 17px;
+      max-width: 640px;
       opacity: 0.95;
+      margin-bottom: 18px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .hero-meta span {
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.18);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 14px;
     }
 
     .buttons {
-      margin-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
     .buttons a {
-      display: inline-block;
-      margin: 8px;
-      padding: 12px 20px;
-      border-radius: 8px;
       text-decoration: none;
-      font-weight: bold;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 15px;
     }
 
     .btn-primary {
@@ -62,583 +116,447 @@
     }
 
     .btn-secondary {
-      background: rgba(255,255,255,0.15);
+      background: transparent;
       color: white;
-      border: 1px solid rgba(255,255,255,0.35);
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+
+    .hero-image {
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 320px;
+      height: auto;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      display: block;
     }
 
     .container {
-  max-width: 1250px;
-  margin: auto;
-  padding: 40px 30px 60px;
-}
-
-   .card{
-background:white;
-border-radius:16px;
-padding:40px;
-margin-bottom:32px;
-}
-    h2 {
-      margin-top: 0;
-      color: #111827;
+      max-width: 1180px;
+      margin: auto;
+      padding: 40px 24px 70px;
     }
 
-    h3 {
-      margin-bottom: 8px;
+    .section-title {
+      font-size: 30px;
+      margin: 0 0 20px;
+      color: #0f172a;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    }
+
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: -35px;
+      margin-bottom: 34px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .highlight-card {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+      border: 1px solid #e5e7eb;
+    }
+
+    .highlight-card h3 {
+      margin: 0 0 6px;
+      font-size: 17px;
       color: #1d4ed8;
     }
 
-    ul {
+    .highlight-card p {
+      margin: 0;
+      font-size: 14px;
+      color: #475569;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .skills-list span {
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #dbeafe;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .project-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .project-content {
+      padding: 22px;
+    }
+
+    .project-content h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #0f172a;
+      font-size: 20px;
+    }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .tech-tags span {
+      background: #f1f5f9;
+      color: #334155;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .experience-list {
+      display: grid;
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+
+    .experience-item {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 22px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+    }
+
+    .experience-item h3 {
+      margin: 0 0 6px;
+      font-size: 19px;
+      color: #0f172a;
+    }
+
+    .experience-item .meta {
+      color: #475569;
+      font-size: 14px;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .experience-item ul {
+      margin: 0;
       padding-left: 20px;
     }
 
-    .grid-2 {
+    .bottom-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      gap: 24px;
+      margin-bottom: 30px;
     }
 
-    .job {
-      margin-bottom: 20px;
+    .contact-card p {
+      margin: 10px 0;
     }
-
-    .job p {
-      margin-top: 6px;
-    }
-
-    .tag {
-  display: inline-block;
-  background: #eff6ff;
-  color: #1d4ed8;
-  padding: 8px 12px;
-  border-radius: 999px;
-  margin: 8px 8px 0 0;
-  font-size: 14px;
-  font-weight: 600;
-  border: 1px solid #dbeafe;
-}
 
     footer {
       text-align: center;
-      padding: 24px;
-      color: #6b7280;
+      color: #64748b;
       font-size: 14px;
+      padding: 26px;
     }
 
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 30px;
-      }
-
-      .grid-2 {
+    @media (max-width: 980px) {
+      .hero-container,
+      .two-col,
+      .bottom-grid,
+      .projects-grid,
+      .highlights {
         grid-template-columns: 1fr;
-        .profile-photo {
-  width: 90px;
-  height: 90px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid white;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
-}
+      }
+
+      .hero-container {
+        gap: 30px;
+      }
+
+      .hero-text h1 {
+        font-size: 36px;
+      }
+
+      .project-card img {
+        height: auto;
       }
     }
-   .highlight-box {
-  background: linear-gradient(135deg, #0f172a, #1e3a8a);
-  color: white;
-  border-radius: 16px;
-  padding: 30px;
-  margin-bottom: 24px;
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.18);
-}
-
-.highlight-box h2 {
-  color: white;
-  margin-top: 0;
-}
-
-.highlight-box p {
-  margin-bottom: 0;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.skill-box {
-  background: #f8fafc;
-  border: 1px solid #e5e7eb;
-  border-radius: 14px;
-  padding: 20px;
-}
-
-.skill-box h3 {
-  margin-top: 0;
-} 
-    .navbar{
-background:rgba(15,23,42,0.95);
-padding:16px 30px;
-position:sticky;
-top:0;
-z-index:100;
-display:flex;
-justify-content:center;
-gap:30px;
-backdrop-filter:blur(8px);
-box-shadow:0 4px 14px rgba(0,0,0,0.08);
-}
-
-.navbar a{
-color:white;
-text-decoration:none;
-font-weight:600;
-font-size:15px;
-}
-
-.navbar a:hover{
-text-decoration:underline;
-}
-    .project-card {
-  background: #f8fafc;
-  border: 1px solid #e5e7eb;
-  border-radius: 14px;
-  padding: 20px;
-  margin-top: 18px;
-}
-
-.project-card h3 {
-  margin-top: 0;
-}
-    .tech-stack {
-  margin-top: 15px;
-}
-
-.badge {
-  display: inline-block;
-  background: #e0ecff;
-  color: #1e40af;
-  padding: 8px 12px;
-  margin: 6px;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: 600;
-}
-    .hero-container{
-display:flex;
-align-items:center;
-justify-content:space-between;
-max-width:1100px;
-margin:auto;
-gap:70px;
-padding:20px;
-}
-
-.hero-text{
-flex:1;
-max-width:520px;
-}
-
-.hero-image img{
-width:300px;
-height:auto;
-max-height:380px;
-object-fit:contain;
-border-radius:14px;
-box-shadow:0 8px 22px rgba(0,0,0,0.25);
-}
-.title{
-font-size:18px;
-margin-top:10px;
-}
-
-@media (max-width:768px){
-.hero-container{
-flex-direction:column;
-text-align:center;
-}
-}
-    .divider{
-margin:40px auto;
-width:60%;
-border:0;
-height:1px;
-background:#e5e7eb;
-}
-    .project-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:20px;
-margin-top:20px;
-}
-
-.project-card img{
-width:100%;
-border-radius:10px;
-margin-top:10px;
-}
-
-.tech{
-margin-top:10px;
-font-size:14px;
-color:#2563eb;
-font-weight:600;
-}
-
-@media (max-width:768px){
-.project-grid{
-grid-template-columns:repeat(3,1fr);
-}
-}
-.hero{
-padding:110px 20px;
-background:linear-gradient(135deg,#0f172a,#1e3a8a);
-color:white;
-}
-    .two-column {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-}
-
-@media (max-width: 768px) {
-  .two-column {
-    grid-template-columns: 1fr;
-  }
-}
-   .skills-icons{
-display:grid;
-grid-template-columns:repeat(6,1fr);
-gap:25px;
-margin-top:20px;
-text-align:center;
-}
-
-.skill-item img{
-width:45px;
-height:45px;
-}
-
-.skill-item p{
-margin-top:8px;
-font-size:14px;
-font-weight:500;
-}
-
-@media (max-width:768px){
-.skills-icons{
-grid-template-columns:repeat(3,1fr);
-}
-} 
   </style>
 </head>
 <body>
-<nav class="navbar">
-  <a href="#about">About</a>
-  <a href="#skills">Skills</a>
-  <a href="#projects">Projects</a>
-  <a href="#experience">Experience</a>
-  <a href="#contact">Contact</a>
-</nav>
- <section class="hero">
 
-<div class="hero-container">
+  <nav class="navbar">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-<div class="hero-text">
-<h1>Aarthi Shree Chandiran</h1>
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-text">
+        <h1>Aarthi Shree Chandiran</h1>
+        <div class="role">Azure Certified IT Professional | Cloud Infrastructure & IT Operations</div>
+        <p class="summary">
+          Azure-certified IT professional with hands-on experience in cloud infrastructure, troubleshooting, and software testing. Currently building expertise in Azure administration, monitoring, networking, and secure infrastructure deployment.
+        </p>
 
-<p class="title">
-Azure Certified IT Professional | Cloud Infrastructure & IT Operations
-</p>
+        <div class="hero-meta">
+          <span>Berlin, Germany</span>
+          <span>AZ-900 Certified</span>
+          <span>AZ-104 In Progress</span>
+          <span>Eligible to work in Germany</span>
+        </div>
 
-<p class="small">
-Berlin, Germany | Open to Azure Administrator, Cloud Support, and IT Infrastructure roles in Germany
-</p>
+        <div class="buttons">
+          <a class="btn-primary" href="cv.pdf" target="_blank">Download CV</a>
+          <a class="btn-secondary" href="https://linkedin.com/in/aarthi-shree-chandiran" target="_blank">LinkedIn</a>
+          <a class="btn-secondary" href="https://github.com/aarthi-shree-chandiran" target="_blank">GitHub</a>
+        </div>
+      </div>
 
-<div class="buttons">
-<a class="btn-primary" href="Aarthi_Shree_Chandiran_CV.pdf" target="_blank">Download CV</a>
-<a class="btn-secondary" href="https://linkedin.com/in/aarthi-shree-chandiran" target="_blank">LinkedIn</a>
-</div>
+      <div class="hero-image">
+        <img src="profile.jpg" alt="Aarthi Shree Chandiran">
+      </div>
+    </div>
+  </section>
 
-</div>
-
-<div class="hero-image">
-<img src="profile.jpg" alt="Aarthi Shree Chandiran">
-</div>
-
-</div>
-
-</section>
-<hr class="divider">
   <div class="container">
-<section class="highlight-box">
-  <h2>Open to Opportunities in Germany</h2>
-  <p>
-    I am currently seeking opportunities in Azure Administration,
-    Cloud Infrastructure, IT Support, and IT Operations roles.
-    I bring Azure certification, hands-on infrastructure exposure,
-    troubleshooting experience, and strong motivation to grow in
-    cloud-focused environments.
-  </p>
-</section>
-    <section class="card" id="about">
-      <h2>👩‍💻 About Me</h2>
-      <p>
-        Azure-certified IT professional with experience in system support, troubleshooting, software testing, and SLA-driven operations. I have hands-on exposure to Azure infrastructure services including Virtual Machines, Virtual Networks, Network Security Groups, RBAC, Azure Monitor, and Azure Backup.
-      </p>
-      <p>
-        My background combines IT operations, validation testing, and cloud infrastructure learning. I am currently preparing for Microsoft Azure Administrator (AZ-104) and looking for opportunities where I can contribute to reliable, secure, and scalable IT environments.
-      </p>
-      <p><strong>Work Authorization:</strong> Eligible to work in Germany until August 2026.</p>
-    </section>
-<section class="card">
-  <h2>✨ What I Bring</h2>
 
-<ul>
-<li>Azure Fundamentals (AZ-900) certified with hands-on cloud infrastructure learning</li>
-<li>Practical experience with Azure Virtual Machines, VNets, Network Security Groups, RBAC, monitoring, and backup</li>
-<li>Strong troubleshooting and system validation experience in SLA-driven environments</li>
-<li>Automation testing experience using Selenium and debugging software systems</li>
-<li>Motivated to grow into Azure Administration and Cloud Infrastructure roles</li>
-</ul>
-</section>
-
-  <section class="card" id="skills">
-
-<h2>🛠 Technical Skills</h2>
-
-<div class="skills-icons">
-
-<div class="skill-item">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg">
-<p>Azure</p>
-</div>
-
-<div class="skill-item">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg">
-<p>Linux</p>
-</div>
-
-<div class="skill-item">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg">
-<p>Git</p>
-</div>
-
-<div class="skill-item">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg">
-<p>GitHub</p>
-</div>
-
-<div class="skill-item">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg">
-<p>Selenium</p>
-</div>
-
-<div class="skill-item">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg">
-<p>SQL</p>
-</div>
-
-</div>
-
-</section>
-<section class="card">
-  <h2>⚙️ Tech Stack</h2>
-
-  <div class="tech-stack">
-    <span class="badge">Microsoft Azure</span>
-    <span class="badge">Virtual Machines</span>
-    <span class="badge">VNet</span>
-    <span class="badge">NSG</span>
-    <span class="badge">RBAC</span>
-    <span class="badge">Azure Monitor</span>
-    <span class="badge">Azure Backup</span>
-    <span class="badge">Linux</span>
-    <span class="badge">Git</span>
-    <span class="badge">GitHub</span>
-    <span class="badge">Selenium</span>
-    <span class="badge">SQL</span>
-  </div>
-
-</section>
-    <section class="card" id="projects">
-  <h2>☁️ Featured Projects</h2>
-
-<div class="project-grid">
-
-<div class="project-card">
-
-<h3>☁️ Azure Infrastructure Deployment</h3>
-
-<p>
-Designed and deployed a secure Azure infrastructure environment using Virtual Machines within a Virtual Network architecture. Configured subnets and Network Security Groups to control traffic and implemented Role-Based Access Control (RBAC) for secure resource management. Monitoring and alerts were configured using Azure Monitor, and data protection was implemented using Azure Backup.
-</p>
-<img src="azure-vm-architecture.png" alt="Azure Architecture Diagram">
-
-<p class="tech">
-Azure VM • VNet • NSG • RBAC • Azure Monitor
-</p>
-
-</div>
-
-<div class="project-card">
-
-<h3>📊 Azure Monitoring & Backup</h3>
-
-<p>
-Implemented monitoring and backup strategies using Azure Monitor and Azure Backup to track resource health, performance, and availability. Designed monitoring alerts and recovery processes to ensure operational stability and data protection.
-</p>
-
-<p class="tech">
-Azure Monitor • Azure Backup • Monitoring • Troubleshooting
-</p>
-
-</div>
-
-<div class="project-card">
-
-<h3>⚙️ Selenium Automation Framework</h3>
-
-<p>
-Developed reusable Selenium automation scripts for functional and regression testing, improving testing efficiency and increasing overall test coverage. Reduced manual testing effort by implementing automated validation workflows.
-</p>
-
-<p class="tech">
-Selenium • Automation Testing • QA
-</p>
-
-</div>
-</div>
-
-</section>
-
-    <section class="card" id="experience">
-      <h2>💼 Professional Experience</h2>
-
-      <div class="job">
-        <h3>Quality Assurance Associate — Picnic GmbH, Berlin</h3>
-        <ul>
-<li>Performed system validation testing to support operational stability</li>
-<li>Identified workflow issues and contributed to faster incident resolution</li>
-<li>Collaborated with cross-functional teams to maintain SLA compliance</li>
-</ul>
+    <section class="highlights">
+      <div class="highlight-card">
+        <h3>Certification</h3>
+        <p>Microsoft Azure Fundamentals (AZ-900)</p>
       </div>
-
-      <div class="job">
-        <h3>Warehouse Operations Associate — Amazon, Berlin</h3>
-        <ul>
-<li>Worked in a high-performance SLA-driven operational environment</li>
-<li>Reported operational workflow issues affecting efficiency</li>
-<li>Maintained high productivity and accuracy under strict deadlines</li>
-</ul>
+      <div class="highlight-card">
+        <h3>Focus Area</h3>
+        <p>Cloud Infrastructure & Azure Administration</p>
       </div>
-
-      <div class="job">
-        <h3>Working Student — BHT University, Berlin</h3>
-       <ul>
-<li>Executed 500+ software test cases validating application functionality</li>
-<li>Supported debugging and system improvements</li>
-<li>Maintained documentation and defect tracking for testing processes</li>
-</ul>
+      <div class="highlight-card">
+        <h3>Experience</h3>
+        <p>Testing, Troubleshooting, SLA-driven Operations</p>
       </div>
-      <div class="job">
-        <h3>Software Tester — Hexaware Technologies, India</h3>
-       <ul>
-<li>Developed 200+ Selenium automation scripts for regression testing</li>
-<li>Improved test coverage by 40% through automation optimization</li>
-<li>Performed functional and regression testing to ensure software quality</li>
-</ul>
+      <div class="highlight-card">
+        <h3>Availability</h3>
+        <p>Open to roles across Germany</p>
       </div>
     </section>
 
-    <section class="card two-column">
+    <section class="two-col" id="about">
+      <div class="card">
+        <h2 class="section-title">About Me</h2>
+        <p>
+          I am an Azure-certified IT professional with experience in system support, software testing, and operational troubleshooting. My background includes working in SLA-driven environments, supporting validation processes, improving workflows, and contributing to reliable system performance.
+        </p>
+        <p>
+          I am currently strengthening my cloud administration skills through hands-on Azure projects involving Virtual Machines, Virtual Networks, Network Security Groups, RBAC, Azure Monitor, and Azure Backup. I am seeking opportunities in Azure Administration, Cloud Support, IT Operations, and Infrastructure roles in Germany.
+        </p>
+      </div>
 
-<div>
-<h2>🎓 Certifications</h2>
+      <div class="card">
+        <h2 class="section-title">Core Skills</h2>
+        <div class="skills-list">
+          <span>Microsoft Azure</span>
+          <span>Virtual Machines</span>
+          <span>VNet</span>
+          <span>NSG</span>
+          <span>RBAC</span>
+          <span>Azure Monitor</span>
+          <span>Azure Backup</span>
+          <span>Linux</span>
+          <span>Windows</span>
+          <span>Selenium</span>
+          <span>Git</span>
+          <span>GitHub</span>
+          <span>Jira</span>
+          <span>SQL</span>
+          <span>Troubleshooting</span>
+          <span>Incident Management</span>
+        </div>
+      </div>
+    </section>
 
-<ul>
-<li>Microsoft Azure Fundamentals (AZ-900)</li>
-<li>Azure Administrator (AZ-104) – In Progress</li>
-</ul>
-</div>
+    <section id="projects">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <img src="azure-vm-architecture.png" alt="Azure VM Architecture Diagram">
+          <div class="project-content">
+            <h3>Azure Infrastructure Deployment</h3>
+            <p>
+              Designed and deployed a secure Azure environment using Virtual Machines, Virtual Networks, subnets, and Network Security Groups. Implemented RBAC for secure access control and resource governance.
+            </p>
+            <div class="tech-tags">
+              <span>Azure VM</span>
+              <span>VNet</span>
+              <span>NSG</span>
+              <span>RBAC</span>
+            </div>
+          </div>
+        </div>
 
-<div>
-<h2>🎓 Education</h2>
+        <div class="project-card">
+          <div class="project-content">
+            <h3>Azure Monitoring & Backup</h3>
+            <p>
+              Configured Azure Monitor to track availability, health, and performance. Implemented backup and recovery processes to support operational continuity and data protection.
+            </p>
+            <div class="tech-tags">
+              <span>Azure Monitor</span>
+              <span>Azure Backup</span>
+              <span>Monitoring</span>
+              <span>Recovery</span>
+            </div>
+          </div>
+        </div>
 
-<ul>
-<li>M.Sc. IT Management – Berlin School of Business and Innovation</li>
-<li>B.E. Computer Science – Anna University</li>
-</ul>
-</div>
+        <div class="project-card">
+          <div class="project-content">
+            <h3>Selenium Automation Framework</h3>
+            <p>
+              Developed reusable Selenium automation scripts for functional and regression testing, improving testing efficiency and reducing manual effort across validation workflows.
+            </p>
+            <div class="tech-tags">
+              <span>Selenium</span>
+              <span>Automation</span>
+              <span>Testing</span>
+              <span>QA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-</section>
-<section class="card two-column">
+    <section id="experience">
+      <h2 class="section-title">Professional Experience</h2>
+      <div class="experience-list">
+        <div class="experience-item">
+          <h3>Quality Assurance Associate</h3>
+          <div class="meta">Picnic GmbH, Berlin | 2025</div>
+          <ul>
+            <li>Performed system validation testing to support operational stability.</li>
+            <li>Identified workflow issues and contributed to faster incident resolution.</li>
+            <li>Collaborated with cross-functional teams to maintain SLA compliance.</li>
+          </ul>
+        </div>
 
-<div>
-<h2>🌍 Languages</h2>
+        <div class="experience-item">
+          <h3>Warehouse Operations Associate</h3>
+          <div class="meta">Amazon, Berlin | 2024–2025</div>
+          <ul>
+            <li>Worked in a high-performance SLA-driven operational environment.</li>
+            <li>Reported workflow issues affecting operational efficiency.</li>
+            <li>Maintained strong accuracy and productivity under strict deadlines.</li>
+          </ul>
+        </div>
 
-<p>
-English (B2)<br>
-German (A2)<br>
-Tamil (Native)<br>
-Malayalam (Conversational)<br>
-Hindi (Basic)
-</p>
+        <div class="experience-item">
+          <h3>Working Student – Software Development & Testing</h3>
+          <div class="meta">BHT University, Berlin | 2023–2024</div>
+          <ul>
+            <li>Executed 500+ software test cases validating application functionality.</li>
+            <li>Supported debugging and system improvements during testing cycles.</li>
+            <li>Maintained documentation and defect tracking processes.</li>
+          </ul>
+        </div>
 
-</div>
+        <div class="experience-item">
+          <h3>Software Tester</h3>
+          <div class="meta">Hexaware Technologies, India | 2022–2023</div>
+          <ul>
+            <li>Developed 200+ Selenium automation scripts for regression testing.</li>
+            <li>Improved test coverage by 40% through automation optimization.</li>
+            <li>Performed functional and regression testing to improve software quality.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-<div>
+    <section class="bottom-grid">
+      <div class="card">
+        <h2 class="section-title">Certifications & Education</h2>
+        <p><strong>Microsoft Azure Fundamentals (AZ-900)</strong></p>
+        <p>Microsoft Azure Administrator (AZ-104) — In Progress</p>
+        <hr>
+        <p><strong>M.Sc. IT Management</strong><br>Berlin School of Business and Innovation</p>
+        <p><strong>B.E. Computer Science and Engineering</strong><br>Anna University</p>
+      </div>
 
-<h2>📘 Currently Learning</h2>
+      <div class="card">
+        <h2 class="section-title">Languages & Availability</h2>
+        <p>English (B2)</p>
+        <p>German (A2)</p>
+        <p>Tamil (Native)</p>
+        <p>Malayalam (Conversational)</p>
+        <p>Hindi (Basic)</p>
+        <hr>
+        <p><strong>Work Authorization:</strong> Eligible to work in Germany until August 2026.</p>
+      </div>
+    </section>
 
-<ul>
-<li>Microsoft Azure Administrator (AZ-104)</li>
-<li>Azure Networking and Security</li>
-<li>Cloud Infrastructure Monitoring</li>
-<li>Identity and Access Management in Azure</li>
-</ul>
+    <section class="card contact-card" id="contact">
+      <h2 class="section-title">Contact</h2>
+      <p><strong>Email:</strong> <a href="mailto:aarthishreechandiran@gmail.com">aarthishreechandiran@gmail.com</a></p>
+      <p><strong>Phone:</strong> +49 176 74199920</p>
+      <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/aarthi-shree-chandiran" target="_blank">linkedin.com/in/aarthi-shree-chandiran</a></p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/aarthi-shree-chandiran" target="_blank">github.com/aarthi-shree-chandiran</a></p>
+      <p><strong>Portfolio:</strong> <a href="https://aarthi-shree-chandiran.github.io/" target="_blank">aarthi-shree-chandiran.github.io</a></p>
+    </section>
 
-</div>
-
-</section>
-<section class="card" id="projects">
-  <h2>GitHub & Project Work</h2>
- <p>
-I actively build hands-on projects in cloud infrastructure, automation, and system monitoring to strengthen my Azure administration skills. My GitHub repositories include practice environments, automation scripts, and cloud infrastructure labs.
-</p>
-
-<p>
-<strong>GitHub:</strong>
-<a href="https://github.com/aarthi-shree-chandiran" target="_blank">
-github.com/aarthi-shree-chandiran
-</a>
-</p>
-</section>
-    <section class="card">
-  <h2>Download My CV</h2>
-
-  <p>You can download my resume below:</p>
-
-  <p>
-    <a class="btn-primary" href="Aarthi_Shree_Chandiran_CV.pdf" target="_blank">Download CV</a>
-  </p>
-
-</section>
-    <section class="card" id="contact">
-  <h2>📩 Contact & Professional Links</h2>
-  <p><strong>Email:</strong> <a href="mailto:aarthishreechandiran@gmail.com">aarthishreechandiran@gmail.com</a></p>
-  <p><strong>Phone:</strong> +49 176 74199920</p>
-  <p><strong>Location:</strong> Berlin, Germany</p>
-  <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/aarthi-shree-chandiran" target="_blank">linkedin.com/in/aarthi-shree-chandiran</a></p>
-  <p><strong>GitHub:</strong> <a href="https://github.com/aarthi-shree-chandiran" target="_blank">github.com/aarthi-shree-chandiran</a></p>
-</section>
   </div>
 
-  
-<footer style="text-align:center; padding:30px; color:#6b7280;">
-© 2026 Aarthi Shree Chandiran — Azure & IT Operations Portfolio
-</footer>
+  <footer>
+    © 2026 Aarthi Shree Chandiran • Azure Administrator Portfolio
+  </footer>
+
 </body>
 </html>
