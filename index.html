@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aarthi Shree Chandiran | Azure Administrator Portfolio</title>
-  <meta name="description" content="Portfolio of Aarthi Shree Chandiran, Azure Certified IT Professional based in Berlin specializing in cloud infrastructure, Azure administration, and IT operations.">
+  <title>Aarthi Shree Chandiran | Cloud Infrastructure & IT Operations Portfolio</title>
+  <meta name="description" content="Portfolio of Aarthi Shree Chandiran, Azure Certified IT Professional based in Berlin specializing in cloud infrastructure, Azure administration, and IT operations." />
 
   <style>
     * {
@@ -18,82 +18,107 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f8fafc;
+      background: linear-gradient(180deg, #f8fbff 0%, #eef4ff 100%);
       color: #0f172a;
       line-height: 1.6;
+    }
+
+    a {
+      color: #1d4ed8;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
 
     .navbar {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(15, 23, 42, 0.96);
-      backdrop-filter: blur(8px);
-      padding: 16px 32px;
+      background: rgba(10, 18, 38, 0.82);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 16px 28px;
       display: flex;
       justify-content: center;
-      gap: 28px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      gap: 30px;
+      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
     }
 
     .navbar a {
-      color: white;
-      text-decoration: none;
+      color: #ffffff;
       font-size: 15px;
       font-weight: 600;
-    }
-
-    .navbar a:hover {
-      text-decoration: underline;
+      letter-spacing: 0.2px;
     }
 
     .hero {
-      background: linear-gradient(135deg, #0f172a, #1d4ed8);
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top left, rgba(96, 165, 250, 0.35), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.25), transparent 35%),
+        linear-gradient(135deg, #081225 0%, #10254d 45%, #1d4ed8 100%);
       color: white;
-      padding: 80px 24px;
+      padding: 92px 24px 88px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.02), rgba(255,255,255,0));
+      pointer-events: none;
     }
 
     .hero-container {
+      position: relative;
+      z-index: 1;
       max-width: 1180px;
       margin: auto;
       display: grid;
-      grid-template-columns: 1.3fr 0.9fr;
-      gap: 60px;
+      grid-template-columns: 1.25fr 0.85fr;
+      gap: 64px;
       align-items: center;
     }
 
     .hero-text h1 {
-      margin: 0 0 12px;
-      font-size: 46px;
-      line-height: 1.1;
+      margin: 0 0 14px;
+      font-size: 48px;
+      line-height: 1.08;
+      letter-spacing: -0.9px;
     }
 
-    .hero-text .role {
+    .hero-role {
       font-size: 20px;
-      font-weight: 600;
-      margin-bottom: 14px;
+      font-weight: 700;
+      color: #dbeafe;
+      margin-bottom: 16px;
     }
 
-    .hero-text .summary {
+    .hero-summary {
+      max-width: 680px;
       font-size: 17px;
-      max-width: 640px;
-      opacity: 0.95;
-      margin-bottom: 18px;
+      color: rgba(255,255,255,0.92);
+      margin-bottom: 24px;
     }
 
     .hero-meta {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-bottom: 22px;
+      margin-bottom: 24px;
     }
 
     .hero-meta span {
-      background: rgba(255,255,255,0.14);
-      border: 1px solid rgba(255,255,255,0.18);
-      padding: 8px 12px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #ffffff;
+      padding: 9px 14px;
       border-radius: 999px;
       font-size: 14px;
+      font-weight: 600;
     }
 
     .buttons {
@@ -103,22 +128,29 @@
     }
 
     .buttons a {
-      text-decoration: none;
+      display: inline-block;
       padding: 12px 18px;
       border-radius: 10px;
-      font-weight: 700;
       font-size: 15px;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .buttons a:hover {
+      transform: translateY(-2px);
+      text-decoration: none;
     }
 
     .btn-primary {
-      background: white;
+      background: #ffffff;
       color: #1d4ed8;
+      box-shadow: 0 8px 24px rgba(255,255,255,0.18);
     }
 
     .btn-secondary {
-      background: transparent;
-      color: white;
-      border: 1px solid rgba(255,255,255,0.4);
+      background: rgba(255,255,255,0.08);
+      color: #ffffff;
+      border: 1px solid rgba(255,255,255,0.22);
     }
 
     .hero-image {
@@ -127,52 +159,46 @@
       align-items: center;
     }
 
+    .hero-image-frame {
+      width: 100%;
+      max-width: 335px;
+      padding: 10px;
+      border-radius: 26px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.28), rgba(255,255,255,0.06));
+      box-shadow: 0 20px 50px rgba(0,0,0,0.28);
+    }
+
     .hero-image img {
       width: 100%;
-      max-width: 320px;
       height: auto;
-      border-radius: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
       display: block;
+      border-radius: 20px;
     }
 
     .container {
       max-width: 1180px;
       margin: auto;
-      padding: 40px 24px 70px;
-    }
-
-    .section-title {
-      font-size: 30px;
-      margin: 0 0 20px;
-      color: #0f172a;
-    }
-
-    .card {
-      background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 18px;
-      padding: 28px;
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+      padding: 38px 24px 72px;
     }
 
     .highlights {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 18px;
-      margin-top: -35px;
+      margin-top: -34px;
       margin-bottom: 34px;
       position: relative;
       z-index: 2;
     }
 
     .highlight-card {
-      background: white;
-      border-radius: 16px;
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(10px);
+      border-radius: 18px;
       padding: 20px;
       text-align: center;
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
-      border: 1px solid #e5e7eb;
+      border: 1px solid rgba(226,232,240,0.9);
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
     }
 
     .highlight-card h3 {
@@ -185,6 +211,22 @@
       margin: 0;
       font-size: 14px;
       color: #475569;
+    }
+
+    .section-title {
+      font-size: 30px;
+      margin: 0 0 18px;
+      color: #0f172a;
+      letter-spacing: -0.4px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(226,232,240,0.95);
+      border-radius: 22px;
+      padding: 30px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
     }
 
     .two-col {
@@ -202,7 +244,7 @@
     }
 
     .skills-list span {
-      background: #eff6ff;
+      background: linear-gradient(180deg, #f8fbff, #e8f1ff);
       color: #1d4ed8;
       border: 1px solid #dbeafe;
       padding: 8px 12px;
@@ -219,18 +261,26 @@
     }
 
     .project-card {
-      background: white;
+      background: rgba(255,255,255,0.94);
       border: 1px solid #e2e8f0;
-      border-radius: 18px;
+      border-radius: 22px;
       overflow: hidden;
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.07);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 42px rgba(15, 23, 42, 0.12);
     }
 
     .project-card img {
       width: 100%;
-      height: 190px;
+      height: 205px;
       object-fit: cover;
       display: block;
+      border-bottom: 1px solid #e5e7eb;
+      background: #f8fafc;
     }
 
     .project-content {
@@ -238,10 +288,22 @@
     }
 
     .project-content h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
+      margin: 0 0 10px;
       color: #0f172a;
       font-size: 20px;
+      line-height: 1.25;
+    }
+
+    .project-content p {
+      margin-top: 0;
+      color: #334155;
+    }
+
+    .project-content ul {
+      margin-top: 12px;
+      padding-left: 18px;
+      font-size: 14px;
+      color: #334155;
     }
 
     .tech-tags {
@@ -249,6 +311,7 @@
       flex-wrap: wrap;
       gap: 8px;
       margin-top: 14px;
+      margin-bottom: 8px;
     }
 
     .tech-tags span {
@@ -267,11 +330,11 @@
     }
 
     .experience-item {
-      background: white;
+      background: rgba(255,255,255,0.9);
       border: 1px solid #e2e8f0;
-      border-radius: 16px;
+      border-radius: 18px;
       padding: 22px;
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
     }
 
     .experience-item h3 {
@@ -303,11 +366,17 @@
       margin: 10px 0;
     }
 
+    hr {
+      border: 0;
+      border-top: 1px solid #e2e8f0;
+      margin: 16px 0;
+    }
+
     footer {
       text-align: center;
       color: #64748b;
       font-size: 14px;
-      padding: 26px;
+      padding: 28px 20px 34px;
     }
 
     @media (max-width: 980px) {
@@ -320,23 +389,27 @@
       }
 
       .hero-container {
-        gap: 30px;
+        gap: 34px;
       }
 
       .hero-text h1 {
-        font-size: 36px;
+        font-size: 38px;
+      }
+
+      .navbar {
+        gap: 18px;
+        padding: 14px 18px;
+        flex-wrap: wrap;
+      }
+
+      .highlights {
+        margin-top: 26px;
       }
 
       .project-card img {
         height: auto;
       }
     }
-    .project-content ul{
-margin-top:12px;
-padding-left:18px;
-font-size:14px;
-color:#334155;
-}
   </style>
 </head>
 <body>
@@ -352,9 +425,9 @@ color:#334155;
     <div class="hero-container">
       <div class="hero-text">
         <h1>Aarthi Shree Chandiran</h1>
-        <div class="role">Azure Certified IT Professional | Cloud Infrastructure & IT Operations</div>
-        <p class="summary">
-          Azure-certified IT professional with hands-on experience in cloud infrastructure, troubleshooting, and software testing. Currently building expertise in Azure administration, monitoring, networking, and secure infrastructure deployment.
+        <div class="hero-role">Azure Certified IT Professional | Cloud Infrastructure & IT Operations</div>
+        <p class="hero-summary">
+          Azure-certified IT professional with experience in cloud infrastructure, troubleshooting, and software testing in SLA-driven environments. Hands-on exposure to Azure Virtual Machines, networking, RBAC, monitoring, and backup solutions, with a growing focus on Azure administration and infrastructure operations.
         </p>
 
         <div class="hero-meta">
@@ -372,7 +445,9 @@ color:#334155;
       </div>
 
       <div class="hero-image">
-        <img src="profile.jpg" alt="Aarthi Shree Chandiran">
+        <div class="hero-image-frame">
+          <img src="profile.jpg" alt="Aarthi Shree Chandiran" />
+        </div>
       </div>
     </div>
   </section>
@@ -402,10 +477,10 @@ color:#334155;
       <div class="card">
         <h2 class="section-title">About Me</h2>
         <p>
-          I am an Azure-certified IT professional with experience in system support, software testing, and operational troubleshooting. My background includes working in SLA-driven environments, supporting validation processes, improving workflows, and contributing to reliable system performance.
+          I am an Azure-certified IT professional with experience in system support, software testing, and operational troubleshooting. My background includes validating systems, resolving workflow issues, and supporting reliable service delivery in SLA-driven environments.
         </p>
         <p>
-          I am currently strengthening my cloud administration skills through hands-on Azure projects involving Virtual Machines, Virtual Networks, Network Security Groups, RBAC, Azure Monitor, and Azure Backup. I am seeking opportunities in Azure Administration, Cloud Support, IT Operations, and Infrastructure roles in Germany.
+          I am currently building hands-on Azure administration expertise through projects involving Virtual Machines, Virtual Networks, Network Security Groups, RBAC, Azure Monitor, and Azure Backup. I am seeking opportunities in Azure Administration, Cloud Support, IT Operations, and Infrastructure roles in Germany.
         </p>
       </div>
 
@@ -431,103 +506,87 @@ color:#334155;
         </div>
       </div>
     </section>
-<section class="card">
 
-<h2 class="section-title">Technologies</h2>
-
-<div class="skills-list">
-
-<span>Azure</span>
-<span>Linux</span>
-<span>Git</span>
-<span>GitHub</span>
-<span>Selenium</span>
-<span>SQL</span>
-<span>Networking</span>
-<span>Cloud Monitoring</span>
-
-</div>
-
-</section>
     <section id="projects">
       <h2 class="section-title">Featured Projects</h2>
       <div class="projects-grid">
+
         <div class="project-card">
-          <img src="azure-vm-architecture.png" alt="Azure VM Architecture Diagram">
+          <img src="azure-vm-architecture.png" alt="Azure VM Architecture Diagram" />
           <div class="project-content">
             <h3>Azure Infrastructure Deployment</h3>
             <p>
               Designed and deployed a secure Azure environment using Virtual Machines, Virtual Networks, subnets, and Network Security Groups. Implemented RBAC for secure access control and resource governance.
             </p>
             <ul>
-<li>Deployed Linux VM inside Azure Virtual Network</li>
-<li>Configured Network Security Groups for secure traffic control</li>
-<li>Implemented Role-Based Access Control (RBAC)</li>
-<li>Tested secure remote connectivity</li>
-</ul>
+              <li>Deployed a Linux virtual machine inside a secure Azure Virtual Network.</li>
+              <li>Configured subnets and Network Security Groups for traffic control.</li>
+              <li>Implemented RBAC for controlled access to Azure resources.</li>
+              <li>Validated connectivity and basic infrastructure security.</li>
+            </ul>
             <div class="tech-tags">
               <span>Azure VM</span>
               <span>VNet</span>
               <span>NSG</span>
               <span>RBAC</span>
             </div>
-            <p>
-<a href="https://github.com/aarthi-shree-chandiran" target="_blank">
-View Project on GitHub →
-</a>
-</p>
+            <p><a href="https://github.com/aarthi-shree-chandiran" target="_blank">View Project on GitHub →</a></p>
           </div>
         </div>
 
         <div class="project-card">
-<img src="azure-monitoring.png" alt="Azure Monitoring Architecture">
+          <img src="azure-monitoring.png" alt="Azure Monitoring Architecture" />
           <div class="project-content">
             <h3>Azure Monitoring & Backup</h3>
             <p>
               Configured Azure Monitor to track availability, health, and performance. Implemented backup and recovery processes to support operational continuity and data protection.
             </p>
             <ul>
-<li>Configured Azure Monitor metrics and logs</li>
-<li>Created alert rules for system performance</li>
-<li>Enabled monitoring dashboards</li>
-<li>Tested resource health monitoring</li>
-</ul>
+              <li>Configured Azure Monitor for metrics, health, and performance tracking.</li>
+              <li>Created alerting logic for resource monitoring scenarios.</li>
+              <li>Implemented backup and recovery processes for operational continuity.</li>
+              <li>Reviewed monitoring data to support issue identification.</li>
+            </ul>
             <div class="tech-tags">
               <span>Azure Monitor</span>
               <span>Azure Backup</span>
               <span>Monitoring</span>
               <span>Recovery</span>
             </div>
+            <p><a href="https://github.com/aarthi-shree-chandiran" target="_blank">View Project on GitHub →</a></p>
           </div>
         </div>
 
         <div class="project-card">
-<img src="selenium-testing.png" alt="Selenium Automation Framework">
+          <img src="selenium-testing.png" alt="Selenium Automation Framework" />
           <div class="project-content">
             <h3>Selenium Automation Framework</h3>
             <p>
               Developed reusable Selenium automation scripts for functional and regression testing, improving testing efficiency and reducing manual effort across validation workflows.
             </p>
             <ul>
-<li>Developed Selenium WebDriver automation scripts</li>
-<li>Executed regression testing scenarios</li>
-<li>Improved automation coverage</li>
-<li>Reduced manual testing effort</li>
-</ul>
+              <li>Built reusable Selenium WebDriver automation scripts.</li>
+              <li>Supported functional and regression testing workflows.</li>
+              <li>Improved test coverage through automation optimization.</li>
+              <li>Reduced manual validation effort across testing cycles.</li>
+            </ul>
             <div class="tech-tags">
               <span>Selenium</span>
               <span>Automation</span>
               <span>Testing</span>
               <span>QA</span>
             </div>
+            <p><a href="https://github.com/aarthi-shree-chandiran" target="_blank">View Project on GitHub →</a></p>
           </div>
         </div>
+
       </div>
     </section>
 
     <section id="experience">
       <h2 class="section-title">Professional Experience</h2>
       <div class="experience-list">
+
         <div class="experience-item">
           <h3>Quality Assurance Associate</h3>
           <div class="meta">Picnic GmbH, Berlin | 2025</div>
@@ -567,6 +626,7 @@ View Project on GitHub →
             <li>Performed functional and regression testing to improve software quality.</li>
           </ul>
         </div>
+
       </div>
     </section>
 
@@ -575,22 +635,11 @@ View Project on GitHub →
         <h2 class="section-title">Certifications & Education</h2>
         <p><strong>Microsoft Azure Fundamentals (AZ-900)</strong></p>
         <p>Microsoft Azure Administrator (AZ-104) — In Progress</p>
-        <hr>
-        <p><strong>M.Sc. IT Management</strong><br>Berlin School of Business and Innovation</p>
-        <p><strong>B.E. Computer Science and Engineering</strong><br>Anna University</p>
+        <hr />
+        <p><strong>M.Sc. IT Management</strong><br />Berlin School of Business and Innovation</p>
+        <p><strong>B.E. Computer Science and Engineering</strong><br />Anna University</p>
       </div>
-<section class="card">
 
-<h2 class="section-title">Currently Learning</h2>
-
-<ul>
-<li>Microsoft Azure Administrator (AZ-104)</li>
-<li>Azure Networking & Security</li>
-<li>Cloud Infrastructure Monitoring</li>
-<li>Infrastructure Automation</li>
-</ul>
-
-</section>
       <div class="card">
         <h2 class="section-title">Languages & Availability</h2>
         <p>English (B2)</p>
@@ -598,7 +647,7 @@ View Project on GitHub →
         <p>Tamil (Native)</p>
         <p>Malayalam (Conversational)</p>
         <p>Hindi (Basic)</p>
-        <hr>
+        <hr />
         <p><strong>Work Authorization:</strong> Eligible to work in Germany until August 2026.</p>
       </div>
     </section>
@@ -615,7 +664,7 @@ View Project on GitHub →
   </div>
 
   <footer>
-    © 2026 Aarthi Shree Chandiran • Azure Administrator Portfolio
+    © 2026 Aarthi Shree Chandiran • Cloud Infrastructure & IT Operations Portfolio
   </footer>
 
 </body>
