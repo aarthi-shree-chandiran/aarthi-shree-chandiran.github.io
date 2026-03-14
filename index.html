@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -8,7 +9,7 @@
 
 <style>
 
-*{box-sizing:border-box;}
+*{box-sizing:border-box}
 
 body{
 margin:0;
@@ -26,18 +27,41 @@ padding:14px;
 display:flex;
 justify-content:center;
 gap:30px;
+z-index:1000;
 }
 
 .navbar a{
 color:white;
-font-weight:600;
 text-decoration:none;
+font-weight:600;
 }
 
 .hero{
-background:linear-gradient(135deg,#0f172a,#1e40af);
+position:relative;
+background:linear-gradient(135deg,#0f172a,#1e3a8a);
 color:white;
 padding:70px 20px;
+overflow:hidden;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+width:420px;
+height:420px;
+background:radial-gradient(circle, rgba(96,165,250,0.28), transparent 70%);
+top:-120px;
+right:-80px;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+width:320px;
+height:320px;
+background:radial-gradient(circle, rgba(59,130,246,0.18), transparent 70%);
+bottom:-120px;
+left:-60px;
 }
 
 .hero-container{
@@ -81,6 +105,7 @@ padding:10px 16px;
 border-radius:8px;
 font-weight:600;
 margin-right:8px;
+text-decoration:none;
 }
 
 .btn-primary{
@@ -102,11 +127,6 @@ border-radius:18px;
 max-width:1100px;
 margin:auto;
 padding:30px 20px;
-}
-
-.section-title{
-font-size:26px;
-margin-bottom:16px;
 }
 
 .highlights{
@@ -146,20 +166,17 @@ color:#1e40af;
 margin:0;
 }
 
-.tech-strip{
-display:flex;
-flex-wrap:wrap;
-gap:10px;
-margin-bottom:30px;
+.focus-banner{
+background:linear-gradient(135deg,#0f172a,#1d4ed8);
+color:white;
+border-radius:18px;
+padding:24px;
+margin-bottom:28px;
 }
 
-.tech-strip span{
-background:#eef4ff;
-border:1px solid #dbeafe;
-padding:6px 12px;
-border-radius:20px;
-font-size:13px;
-font-weight:600;
+.section-title{
+font-size:26px;
+margin-bottom:16px;
 }
 
 .projects{
@@ -174,6 +191,12 @@ background:white;
 border-radius:16px;
 box-shadow:0 10px 20px rgba(0,0,0,0.05);
 overflow:hidden;
+}
+
+.project.featured{
+grid-column:span 2;
+background:linear-gradient(135deg,#0f172a,#1e3a8a);
+color:white;
 }
 
 .project img{
@@ -192,6 +215,12 @@ padding:5px 10px;
 border-radius:14px;
 font-size:12px;
 margin-right:5px;
+}
+
+.project.featured .tags span{
+background:rgba(255,255,255,0.12);
+color:white;
+border:1px solid rgba(255,255,255,0.2);
 }
 
 .experience{
@@ -233,13 +262,14 @@ padding:20px;
 grid-template-columns:1fr;
 }
 
-.hero img{
-width:200px;
+.project.featured{
+grid-column:span 1;
 }
 
 }
 
 </style>
+
 </head>
 
 <body>
@@ -251,11 +281,13 @@ width:200px;
 </nav>
 
 <section class="hero">
+
 <div class="hero-container">
 
 <div>
 
 <h1>Aarthi Shree Chandiran</h1>
+
 <div class="hero-role">Azure Certified IT Professional</div>
 
 <p class="hero-summary">
@@ -271,7 +303,7 @@ Azure-certified IT professional with hands-on experience in cloud infrastructure
 <br>
 
 <div class="buttons">
-<a class="btn-primary" href="Aarthi_Shree_Chandiran_CV.pdf" target="_blank">Download CV</a>
+<a class="btn-primary" href="cv.pdf">Download CV</a>
 <a class="btn-secondary" href="https://linkedin.com/in/aarthi-shree-chandiran">LinkedIn</a>
 <a class="btn-secondary" href="https://github.com/aarthi-shree-chandiran">GitHub</a>
 </div>
@@ -283,6 +315,7 @@ Azure-certified IT professional with hands-on experience in cloud infrastructure
 </div>
 
 </div>
+
 </section>
 
 <div class="container">
@@ -309,45 +342,39 @@ Azure-certified IT professional with hands-on experience in cloud infrastructure
 <section class="stats">
 
 <div class="stat">
+<div>☁️</div>
 <h3>3+</h3>
 <p>Cloud Projects</p>
 </div>
 
 <div class="stat">
+<div>⚙️</div>
 <h3>200+</h3>
 <p>Selenium Scripts</p>
 </div>
 
 <div class="stat">
+<div>✅</div>
 <h3>500+</h3>
 <p>Test Cases</p>
 </div>
 
 </section>
 
-<section class="tech-strip">
-
-<span>Azure</span>
-<span>Virtual Machines</span>
-<span>VNet</span>
-<span>RBAC</span>
-<span>Azure Monitor</span>
-<span>Azure Backup</span>
-<span>Selenium</span>
-<span>Linux</span>
-<span>GitHub</span>
-
+<section class="focus-banner">
+<h2>Focused on Azure Administration & Cloud Operations</h2>
+<p>Building practical experience through Azure infrastructure labs, monitoring workflows, and automation projects.</p>
 </section>
 
 <h2 class="section-title">Selected Projects</h2>
 
 <section class="projects" id="projects">
 
-<div class="project">
+<div class="project featured">
 <img src="azure-vm-architecture.png">
 <div class="project-content">
 <h3>Azure Infrastructure Deployment</h3>
-<p>Built a secure Azure VM environment with networking and access control.</p>
+<p>Built a secure Azure VM environment with networking, access control, and connectivity validation.</p>
 <div class="tags">
 <span>Azure VM</span>
 <span>VNet</span>
@@ -360,8 +387,8 @@ Azure-certified IT professional with hands-on experience in cloud infrastructure
 <div class="project">
 <img src="azure-monitoring.png">
 <div class="project-content">
-<h3>Azure Monitoring & Backup</h3>
-<p>Configured monitoring and backup workflows for resource health visibility.</p>
+<h3>Azure Monitoring</h3>
+<p>Configured monitoring and backup workflows for resource visibility.</p>
 <div class="tags">
 <span>Azure Monitor</span>
 <span>Backup</span>
@@ -392,25 +419,21 @@ Azure-certified IT professional with hands-on experience in cloud infrastructure
 <div class="exp-card">
 <h3>Quality Assurance Associate</h3>
 <p>Picnic GmbH · 2025</p>
-<p>System validation and troubleshooting in SLA-driven environment.</p>
 </div>
 
 <div class="exp-card">
 <h3>Warehouse Operations Associate</h3>
 <p>Amazon · 2024–2025</p>
-<p>Operational workflows and performance-driven environment.</p>
 </div>
 
 <div class="exp-card">
 <h3>Working Student – Software Testing</h3>
 <p>BHT University · 2023–2024</p>
-<p>Executed 500+ software test cases.</p>
 </div>
 
 <div class="exp-card">
 <h3>Software Tester</h3>
 <p>Hexaware Technologies · 2022–2023</p>
-<p>Developed 200+ Selenium automation scripts.</p>
 </div>
 
 </section>
