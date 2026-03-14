@@ -50,19 +50,19 @@
       position: relative;
       overflow: hidden;
       background:
-        radial-gradient(circle at top left, rgba(96, 165, 250, 0.28), transparent 32%),
-        radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.20), transparent 36%),
-        linear-gradient(135deg, #081225 0%, #10254d 48%, #1d4ed8 100%);
+        radial-gradient(circle at top left, rgba(96, 165, 250, 0.25), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.18), transparent 35%),
+        linear-gradient(135deg, #081225 0%, #10254d 45%, #1d4ed8 100%);
       color: white;
-      padding: 68px 24px 60px;
+      padding: 88px 24px 78px;
     }
 
     .hero-container {
-      max-width: 1120px;
+      max-width: 1180px;
       margin: auto;
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 42px;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 56px;
       align-items: center;
     }
 
@@ -160,7 +160,7 @@
     .container {
       max-width: 1120px;
       margin: auto;
-      padding: 26px 24px 44px;
+      padding: 34px 24px 52px;
     }
 
     .highlights {
@@ -190,39 +190,6 @@
 
     .highlight-card p {
       margin: 0;
-      font-size: 14px;
-      color: #475569;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-bottom: 24px;
-    }
-
-    .stat {
-      background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 18px;
-      padding: 18px;
-      text-align: center;
-      box-shadow: 0 10px 24px rgba(15,23,42,0.05);
-    }
-
-    .stat .icon {
-      font-size: 22px;
-      margin-bottom: 4px;
-    }
-
-    .stat h3 {
-      margin: 0;
-      color: #1d4ed8;
-      font-size: 28px;
-    }
-
-    .stat p {
-      margin: 4px 0 0;
       font-size: 14px;
       color: #475569;
     }
@@ -273,6 +240,9 @@
       overflow: hidden;
       box-shadow: 0 12px 28px rgba(15,23,42,0.06);
       transition: transform 0.25s ease, box-shadow 0.25s ease;
+      min-height: 430px;
+      display: flex;
+      flex-direction: column;
     }
 
     .project:hover {
@@ -288,25 +258,29 @@
 
     .project img {
       width: 100%;
-      height: 185px;
+      height: 210px;
       object-fit: cover;
       display: block;
       background: #f8fafc;
     }
 
     .project-content {
-      padding: 18px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
     }
 
     .project-content h3 {
-      margin: 0 0 8px;
+      margin: 0;
       font-size: 20px;
       line-height: 1.25;
       color: inherit;
     }
 
     .project-content p {
-      margin: 0 0 10px;
+      margin: 0;
       font-size: 15px;
       color: inherit;
     }
@@ -315,7 +289,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 10px;
+      margin-top: auto;
     }
 
     .tags span {
@@ -405,7 +379,6 @@
     @media (max-width: 900px) {
       .hero-container,
       .highlights,
-      .stats,
       .projects,
       .experience {
         grid-template-columns: 1fr;
@@ -436,7 +409,7 @@
         <h1>Aarthi Shree Chandiran</h1>
         <div class="hero-role">Azure Certified IT Professional</div>
         <p class="hero-summary">
-          Azure-certified IT professional with hands-on experience in cloud infrastructure, troubleshooting, and software testing. Focused on Azure administration and cloud operations roles in Germany.
+          Building hands-on experience in Azure infrastructure, monitoring, and cloud operations through practical deployment and automation projects.
         </p>
 
         <div class="hero-meta">
@@ -477,24 +450,6 @@
       </div>
     </section>
 
-    <section class="stats">
-      <div class="stat">
-        <div class="icon">☁️</div>
-        <h3>3+</h3>
-        <p>Cloud Projects</p>
-      </div>
-      <div class="stat">
-        <div class="icon">⚙️</div>
-        <h3>200+</h3>
-        <p>Selenium Scripts</p>
-      </div>
-      <div class="stat">
-        <div class="icon">✅</div>
-        <h3>500+</h3>
-        <p>Test Cases</p>
-      </div>
-    </section>
-
     <section class="focus-banner">
       <h2>Focused on Azure Administration & Cloud Operations</h2>
       <p>Building practical experience through Azure infrastructure labs, monitoring workflows, and automation projects.</p>
@@ -509,6 +464,7 @@
         <div class="project-content">
           <h3>Azure Infrastructure Deployment</h3>
           <p>Built a secure Azure VM environment with networking, access control, and connectivity validation.</p>
+          <p><strong>Outcome:</strong> Built a practical Azure lab for secure compute, networking, and access-control practice.</p>
           <div class="tags">
             <span>Azure VM</span>
             <span>VNet</span>
@@ -523,6 +479,7 @@
         <div class="project-content">
           <h3>Azure Monitoring</h3>
           <p>Configured monitoring and backup workflows for resource visibility and recovery readiness.</p>
+          <p><strong>Outcome:</strong> Created a monitoring and recovery workflow for better resource visibility and operational readiness.</p>
           <div class="tags">
             <span>Azure Monitor</span>
             <span>Backup</span>
@@ -536,6 +493,7 @@
         <div class="project-content">
           <h3>Selenium Automation</h3>
           <p>Created reusable Selenium automation scripts for regression testing and validation workflows.</p>
+          <p><strong>Outcome:</strong> Improved testing efficiency through reusable automation and reduced manual validation effort.</p>
           <div class="tags">
             <span>Selenium</span>
             <span>Automation</span>
@@ -551,25 +509,25 @@
       <div class="exp-card">
         <h3>Quality Assurance Associate</h3>
         <div class="meta">Picnic GmbH · 2025</div>
-        <p>System validation, issue resolution, and SLA-focused operational support.</p>
+        <p>Supported system validation, issue resolution, and SLA-focused operational reliability.</p>
       </div>
 
       <div class="exp-card">
         <h3>Warehouse Operations Associate</h3>
         <div class="meta">Amazon · 2024–2025</div>
-        <p>Operational workflows in a performance-driven environment.</p>
+        <p>Worked in a performance-driven operational environment with strong workflow discipline.</p>
       </div>
 
       <div class="exp-card">
         <h3>Working Student – Software Testing</h3>
         <div class="meta">BHT University · 2023–2024</div>
-        <p>Executed 500+ test cases and supported debugging activities.</p>
+        <p>Executed 500+ test cases and supported debugging and test documentation workflows.</p>
       </div>
 
       <div class="exp-card">
         <h3>Software Tester</h3>
         <div class="meta">Hexaware Technologies · 2022–2023</div>
-        <p>Developed 200+ Selenium automation scripts for software testing.</p>
+        <p>Developed 200+ Selenium automation scripts to improve regression testing efficiency.</p>
       </div>
     </section>
 
