@@ -3,64 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aarthi Shree Chandiran | Portfolio</title>
+    <title>Aarthi Shree Chandiran | Cloud Portfolio</title>
     <style>
-        body { font-family: sans-serif; margin: 0; padding: 0; background: #f8fafc; color: #1e293b; }
-        nav { background: #0f172a; padding: 1rem; text-align: center; position: sticky; top: 0; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-        .hero { background: #0f172a; color: white; padding: 100px 20px; text-align: center; }
-        .container { max-width: 1000px; margin: auto; padding: 50px 20px; }
-        .card { background: white; border: 1px solid #e2e8f0; padding: 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
-        .tag { background: #dbeafe; color: #1e4ed8; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; margin-right: 5px; }
-        h2 { color: #0f172a; border-bottom: 2px solid #2563eb; display: inline-block; padding-bottom: 5px; }
-        .btn { background: #2563eb; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block; margin-top: 20px; }
+        /* CSS RESET & BASE STYLES */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            line-height: 1.6; 
+            color: #1e293b; 
+            background-color: #f1f5f9; 
+        }
+
+        /* NAVIGATION */
+        nav { 
+            background: #0f172a; 
+            padding: 1rem; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            text-align: center;
+        }
+        nav a { color: #94a3b8; text-decoration: none; margin: 0 15px; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+        nav a:hover { color: white; }
+
+        /* HERO SECTION */
+        .hero { 
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); 
+            color: white; 
+            padding: 80px 20px; 
+            text-align: center; 
+        }
+        .hero h1 { font-size: 3rem; margin-bottom: 10px; letter-spacing: -1px; }
+        .hero p { font-size: 1.2rem; color: #cbd5e1; max-width: 600px; margin: 0 auto 25px; }
+        .hero-btns { display: flex; justify-content: center; gap: 15px; }
+        .btn { 
+            padding: 12px 24px; 
+            border-radius: 6px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            display: inline-block; 
+            transition: 0.3s;
+        }
+        .btn-blue { background: #2563eb; color: white; }
+        .btn-blue:hover { background: #1d4ed8; }
+        .btn-outline { border: 1px solid #475569; color: white; }
+        .btn-outline:hover { background: rgba(255,255,255,0.1); }
+
+        /* MAIN CONTENT */
+        .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
+        h2 { font-size: 2rem; margin-bottom: 30px; color: #0f172a; border-left: 5px solid #2563eb; padding-left: 15px; }
+
+        /* PROJECTS GRID */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 60px; }
+        .card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); border: 1px solid #e2e8f0; }
+        .card-img { width: 100%; height: 200px; background: #cbd5e1; object-fit: cover; }
+        .card-content { padding: 25px; }
+        .card-content h3 { margin-bottom: 10px; font-size: 1.3rem; }
+        .card-content p { color: #64748b; font-size: 0.95rem; margin-bottom: 20px; }
+        .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .tag { background: #eff6ff; color: #1e4ed8; padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; }
+
+        /* EXPERIENCE SECTION */
+        .exp-item { background: white; padding: 25px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #94a3b8; }
+        .exp-item.current { border-left-color: #2563eb; }
+        .exp-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .exp-date { color: #2563eb; font-weight: bold; font-size: 0.9rem; }
+
+        /* CONTACT SECTION */
+        .contact { background: #0f172a; color: white; border-radius: 15px; padding: 50px; text-align: center; margin-top: 50px; }
+        .contact a { color: #60a5fa; text-decoration: none; font-size: 1.2rem; font-weight: bold; }
+
+        footer { text-align: center; padding: 40px; color: #64748b; font-size: 0.9rem; }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero-btns { flex-direction: column; }
+        }
     </style>
 </head>
 <body>
 
-<nav>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="mailto:aarthishreechandiran@gmail.com">Contact</a>
-</nav>
+    <nav>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="mailto:aarthishreechandiran@gmail.com">Contact</a>
+    </nav>
 
-<div class="hero">
-    <h1>Aarthi Shree Chandiran</h1>
-    <p>Azure Certified IT Professional | Berlin</p>
-    <a href="https://linkedin.com/in/aarthi-shree-chandiran" class="btn">Connect on LinkedIn</a>
-</div>
+    <header class="hero">
+        <div class="hero-container">
+            <h1>Aarthi Shree Chandiran</h1>
+            <p>Azure Certified IT Professional specializing in Cloud Infrastructure, Automation, and Operations.</p>
+            <div class="hero-btns">
+                <a href="https://linkedin.com/in/aarthi-shree-chandiran" class="btn btn-blue" target="_blank">LinkedIn</a>
+                <a href="https://github.com/aarthi-shree-chandiran" class="btn btn-outline" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </header>
 
-<div class="container" id="projects">
-    <h2>Featured Projects</h2>
-    
-    <div class="card">
-        <h3>Azure Secure Infrastructure</h3>
-        <div><span class="tag">Azure</span><span class="tag">Networking</span></div>
-        <p>Built a secure VNet with NSGs and Bastion access for enterprise-grade security.</p>
-    </div>
+    <main class="container">
+        
+        <h2 id="projects">Technical Projects</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=500&q=80" alt="Azure Project" class="card-img">
+                <div class="card-content">
+                    <div class="tags"><span class="tag">AZURE</span><span class="tag">NETWORKING</span></div>
+                    <h3>Secure VNet Architecture</h3>
+                    <p>Designed a multi-tier network with custom NSG rules and Bastion access to ensure zero public exposure of critical workloads.</p>
+                </div>
+            </div>
 
-    
 
-    <div class="card">
-        <h3>Cloud Monitoring Setup</h3>
-        <div><span class="tag">Azure Monitor</span><span class="tag">Alerting</span></div>
-        <p>Implemented Log Analytics and automated alerts for system health tracking.</p>
-    </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1551288049-bbb653283b68?auto=format&fit=crop&w=500&q=80" alt="Monitoring" class="card-img">
+                <div class="card-content">
+                    <div class="tags"><span class="tag">MONITORING</span><span class="tag">ALERTS</span></div>
+                    <h3>Cloud Observability</h3>
+                    <p>Configured Azure Monitor and Log Analytics with automated email alerts for CPU/Memory spikes and system failures.</p>
+                </div>
+            </div>
 
-    <h2 id="experience" style="margin-top:40px;">Work History</h2>
-    <div class="card">
-        <strong>Picnic GmbH (2025)</strong>
-        <p>Quality Assurance Associate - System reliability and SLA management.</p>
-    </div>
-    <div class="card">
-        <strong>BHT University (2023-2024)</strong>
-        <p>Software Testing - Managed 500+ automated and manual test cases.</p>
-    </div>
-</div>
 
-<footer style="text-align: center; padding: 40px; color: #64748b;">
-    &copy; 2026 Aarthi Shree Chandiran
-</footer>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&w=500&q=80" alt="Automation" class="card-img">
+                <div class="card-content">
+                    <div class="tags"><span class="tag">PYTHON</span><span class="tag">SELENIUM</span></div>
+                    <h3>Testing Automation</h3>
+                    <p>Built a Selenium-based automation framework to run 200+ regression tests, reducing manual testing time by 75%.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 id="experience">Professional Experience</h2>
+        
+        <div class="exp-item current">
+            <div class="exp-header">
+                <h3>Quality Assurance Associate</h3>
+                <span class="exp-date">2025 - Present</span>
+            </div>
+            <strong>Picnic GmbH, Berlin</strong>
+            <p>Supporting system validation and operational reliability for high-volume logistics.</p>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-header">
+                <h3>Working Student - Software Testing</h3>
+                <span class="exp-date">2023 - 2024</span>
+            </div>
+            <strong>BHT University, Berlin</strong>
+            <p>Executed over 500 test cases and managed debugging workflows for university software systems.</p>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-header">
+                <h3>Software Tester</h3>
+                <span class="exp-date">2022 - 2023</span>
+            </div>
+            <strong>Hexaware Technologies</strong>
+            <p>Developed Selenium automation scripts to improve testing efficiency for global enterprise clients.</p>
+        </div>
+
+        <section class="contact">
+            <h2>Let's Connect</h2>
+            <p>Interested in Cloud Infrastructure or IT Operations roles in Berlin.</p>
+            <br>
+            <a href="mailto:aarthishreechandiran@gmail.com">aarthishreechandiran@gmail.com</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Aarthi Shree Chandiran | Built for the Cloud</p>
+    </footer>
 
 </body>
 </html>
