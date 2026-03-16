@@ -7,12 +7,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #0b0f1a;
-            --card-bg: #161b2a;
+            --bg: #030712;
+            --card-bg: #111827;
             --accent: #3b82f6;
-            --text-main: #f8fafc;
-            --text-dim: #94a3b8;
-            --border: rgba(255, 255, 255, 0.1);
+            --text-main: #f9fafb;
+            --text-dim: #9ca3af;
+            --border: rgba(255, 255, 255, 0.08);
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -24,142 +24,105 @@
             overflow-x: hidden;
         }
 
-        /* --- Smooth Reveal Animation --- */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
         .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
         /* --- Navigation --- */
         nav {
-            padding: 30px 0;
+            padding: 40px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            animation: fadeInUp 0.8s ease;
         }
-        .logo { font-weight: 800; font-size: 1.5rem; letter-spacing: -1px; }
+        .logo { font-weight: 800; font-size: 1.2rem; letter-spacing: -1px; }
         .nav-links a {
             color: var(--text-dim);
             text-decoration: none;
-            margin-left: 30px;
-            font-size: 0.9rem;
+            margin-left: 25px;
+            font-size: 0.85rem;
             font-weight: 600;
             transition: 0.3s;
         }
         .nav-links a:hover { color: var(--accent); }
 
-        /* --- Hero Section (Bento Style) --- */
-        .hero-grid {
+        /* --- Bento Grid Layout --- */
+        .bento-grid {
             display: grid;
-            grid-template-columns: 1.5fr 1fr;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: minmax(180px, auto);
             gap: 20px;
-            margin-top: 40px;
-            animation: fadeInUp 1s ease;
+            margin-bottom: 50px;
         }
 
-        .bento-card {
+        .card {
             background: var(--card-bg);
             border: 1px solid var(--border);
-            border-radius: 32px;
-            padding: 40px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-main { display: flex; flex-direction: column; justify-content: center; }
-        .hero-main h1 { font-size: 3.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 20px; }
-        .hero-main p { font-size: 1.1rem; color: var(--text-dim); max-width: 500px; margin-bottom: 30px; }
-
-        .profile-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
             border-radius: 24px;
-            filter: grayscale(20%);
-            transition: 0.5s;
+            padding: 30px;
+            position: relative;
+            transition: transform 0.3s ease, border-color 0.3s ease;
         }
-        .profile-img:hover { filter: grayscale(0%); transform: scale(1.02); }
+        .card:hover { border-color: var(--accent); transform: translateY(-5px); }
 
-        /* --- Status Tags --- */
-        .status-pill {
+        /* --- Specific Card Sizes --- */
+        .hero-card { grid-column: span 3; grid-row: span 2; display: flex; flex-direction: column; justify-content: center; }
+        .photo-card { grid-column: span 1; grid-row: span 2; padding: 0; overflow: hidden; }
+        .skills-card { grid-column: span 4; }
+        .project-card-wide { grid-column: span 2; grid-row: span 2; }
+        .project-card-small { grid-column: span 1; grid-row: span 2; }
+
+        /* --- Hero Styling --- */
+        .status-badge {
             display: inline-flex;
             align-items: center;
             background: rgba(59, 130, 246, 0.1);
             color: var(--accent);
-            padding: 6px 16px;
+            padding: 5px 14px;
             border-radius: 100px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
-
-        /* --- Projects Section --- */
-        .section-header { margin: 100px 0 40px; }
-        .section-header h2 { font-size: 2.5rem; font-weight: 800; }
-
-        .project-bento {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: auto;
-            gap: 20px;
-        }
-
-        .project-card {
-            grid-column: span 1;
-            transition: 0.4s;
-        }
-        .project-card:nth-child(1) { grid-column: span 2; } /* Large featured project */
-
-        .project-card:hover { border-color: var(--accent); background: rgba(255,255,255,0.02); }
-
-        .project-card h3 { font-size: 1.5rem; margin-bottom: 12px; }
-        .project-card p { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 20px; }
-
-        .tag-group { display: flex; gap: 8px; flex-wrap: wrap; }
-        .tag {
-            background: rgba(255,255,255,0.05);
-            padding: 4px 12px;
-            border-radius: 6px;
             font-size: 0.75rem;
-            font-weight: 600;
-            color: var(--text-dim);
-        }
-
-        /* --- Experience Section --- */
-        .exp-row {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            padding: 40px 0;
-            border-bottom: 1px solid var(--border);
-        }
-        .exp-time { color: var(--accent); font-weight: 700; }
-        .exp-details h4 { font-size: 1.4rem; margin-bottom: 4px; }
-        .exp-details span { color: var(--text-dim); font-weight: 600; display: block; margin-bottom: 12px; }
-
-        /* --- Buttons --- */
-        .btn {
-            background: var(--accent);
-            color: white;
-            padding: 14px 28px;
-            border-radius: 12px;
-            text-decoration: none;
             font-weight: 700;
-            display: inline-block;
-            transition: 0.3s;
+            margin-bottom: 20px;
         }
-        .btn:hover { background: #2563eb; box-shadow: 0 0 20px rgba(59, 130, 246, 0.4); }
+        h1 { font-size: 3.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 15px; letter-spacing: -2px; }
+        .hero-sub { font-size: 1.1rem; color: var(--text-dim); max-width: 600px; margin-bottom: 25px; }
+        
+        .contact-info { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 10px; }
+        .contact-item { font-size: 0.85rem; color: var(--text-dim); text-decoration: none; display: flex; align-items: center; gap: 5px; }
+        .contact-item:hover { color: white; }
 
-        footer { padding: 100px 0 50px; text-align: center; color: var(--text-dim); font-size: 0.9rem; }
+        /* --- Image Styling --- */
+        .profile-img { width: 100%; height: 100%; object-fit: cover; }
+        .project-img { 
+            width: 100%; 
+            height: 200px; 
+            object-fit: cover; 
+            border-radius: 16px; 
+            margin-bottom: 15px; 
+            border: 1px solid var(--border);
+        }
 
-        /* --- Mobile Responsive --- */
-        @media (max-width: 900px) {
-            .hero-grid, .project-bento { grid-template-columns: 1fr; }
-            .project-card:nth-child(1) { grid-column: span 1; }
-            .hero-main h1 { font-size: 2.5rem; }
-            .exp-row { grid-template-columns: 1fr; gap: 10px; }
+        /* --- Skills Styling --- */
+        .skills-container { display: flex; flex-wrap: wrap; gap: 10px; }
+        .skill-tag { 
+            background: rgba(255,255,255,0.03); 
+            border: 1px solid var(--border); 
+            padding: 8px 16px; 
+            border-radius: 12px; 
+            font-size: 0.85rem; 
+            font-weight: 600; 
+        }
+
+        /* --- Certification --- */
+        .cert-card { background: linear-gradient(135deg, #111827, #1e3a8a); }
+        .cert-status { color: var(--accent); font-weight: 800; font-size: 0.7rem; text-transform: uppercase; }
+
+        h2 { font-size: 1.8rem; margin-bottom: 30px; font-weight: 800; }
+        h3 { font-size: 1.2rem; margin-bottom: 10px; }
+        p { font-size: 0.9rem; color: var(--text-dim); }
+
+        @media (max-width: 1024px) {
+            .bento-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero-card, .skills-card, .project-card-wide { grid-column: span 2; }
+            h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -167,141 +130,110 @@
 
 <div class="container">
     <nav>
-        <div class="logo">AARTHI.</div>
+        <div class="logo">AARTHI SHREE CHANDIRAN</div>
         <div class="nav-links">
-            <a href="#work">Work</a>
-            <a href="#about">About</a>
+            <a href="#projects">Architecture</a>
+            <a href="#experience">Experience</a>
             <a href="mailto:aarthishreechandiran@gmail.com">Contact</a>
         </div>
     </nav>
 
-    <div class="hero-grid">
-        <div class="bento-card hero-main">
-            <div class="status-pill">● Available for Cloud Roles in Berlin</div>
+    <div class="bento-grid">
+        <div class="card hero-card">
+            <div class="status-badge">● M.Sc. IT Management Graduate</div>
             <h1>Cloud Infrastructure Engineer.</h1>
-            <p>M.Sc. IT Management student specializing in Azure ecosystems, automated validation, and resilient IT operations.</p>
-            <div>
-                <a href="Aarthi_Shree_Chandiran_CV.pdf" class="btn">View CV (PDF)</a>
+            <p class="hero-sub">Azure Certified professional specializing in infrastructure security, monitoring, and automated system validation. Currently driving operational excellence in Berlin.</p>
+            
+            <div class="contact-info">
+                <a href="mailto:aarthishreechandiran@gmail.com" class="contact-item">📧 aarthishreechandiran@gmail.com</a>
+                <a href="tel:+4917674199920" class="contact-item">📞 +49 176 74199920</a>
+                <a href="https://linkedin.com/in/aarthi-shree-chandiran" class="contact-item">🔗 LinkedIn</a>
             </div>
         </div>
-        <div class="bento-card" style="padding: 0;">
+
+        <div class="card photo-card">
             <img src="profile.jpg" alt="Aarthi Shree Chandiran" class="profile-img">
         </div>
-    </div>
 
-    <div class="hero-grid" style="grid-template-columns: repeat(3, 1fr); margin-top: 20px;">
-        <div class="bento-card" style="padding: 30px;">
-            <h4 style="color: var(--accent)">AZ-900</h4>
-            <p style="font-size: 0.9rem">Certified Azure Fundamentals</p>
+        <div class="card skills-card">
+            <h3 style="margin-bottom: 20px;">Core Technical Expertise</h3>
+            <div class="skills-container">
+                <div class="skill-tag">Microsoft Azure</div>
+                <div class="skill-tag">VNet / Subnets</div>
+                <div class="skill-tag">Network Security Groups (NSG)</div>
+                <div class="skill-tag">Azure Monitor / Backup</div>
+                <div class="skill-tag">RBAC & Governance</div>
+                <div class="skill-tag">Linux (Ubuntu)</div>
+                <div class="skill-tag">Selenium Automation</div>
+                <div class="skill-tag">Git / GitHub Actions</div>
+                <div class="skill-tag">Incident Management</div>
+                <div class="skill-tag">Python</div>
+            </div>
         </div>
-        <div class="bento-card" style="padding: 30px;">
-            <h4 style="color: var(--accent)">40% Boost</h4>
-            <p style="font-size: 0.9rem">In test efficiency at Hexaware</p>
-        </div>
-        <div class="bento-card" style="padding: 30px;">
-            <h4 style="color: var(--accent)">M.Sc.</h4>
-            <p style="font-size: 0.9rem">IT Management (2024)</p>
-        </div>
-    </div>
 
-    <div class="section-header" id="work">
-        <h2>Selected Infrastructure Projects</h2>
-    </div>
+        <div class="card cert-card">
+            <span class="cert-status">In Progress</span>
+            <h3 style="margin-top: 10px;">AZ-104</h3>
+            <p>Microsoft Azure Administrator Associate</p>
+            <p style="margin-top: 10px; color: white; font-size: 0.75rem;">Exam Scheduled: March 2026</p>
+        </div>
 
-    <div class="project-bento">
-        <div class="bento-card project-card">
-            <div class="status-pill">Governance & Security</div>
-            <h3>Azure Enterprise Infrastructure Lab</h3>
-            <p>Architected a secure VNet environment with 3-tier subnet isolation. Implemented Network Security Groups (NSGs) and Role-Based Access Control (RBAC) to enforce Zero Trust principles. Verified connectivity and security posture using Azure Bastion.</p>
+        <div class="card">
+            <span class="cert-status" style="color: #10b981;">Certified</span>
+            <h3 style="margin-top: 10px;">AZ-900</h3>
+            <p>Microsoft Azure Fundamentals</p>
+        </div>
+
+        <div class="card project-card-wide" id="projects">
+            <img src="azure-vm-architecture.png" alt="Azure Architecture Lab" class="project-img">
             
-            <div class="tag-group">
-                <span class="tag">Azure VNet</span>
-                <span class="tag">Security</span>
-                <span class="tag">IAM</span>
-            </div>
+            <h3>Secure Infrastructure Deployment</h3>
+            <p>Architected a hardened Azure environment using VNet peering and subnet segmentation. Configured NSGs and RBAC to enforce Zero Trust security principles for VM workloads.</p>
         </div>
 
-        <div class="bento-card project-card">
-            <h3>Cloud Monitoring</h3>
-            <p>Configured Azure Monitor and Log Analytics to track VM performance metrics. Set up automated action groups for critical alerts and backup recovery points.</p>
+        <div class="card project-card-small">
+            <img src="azure-monitoring.png" alt="Azure Monitoring" class="project-img">
             
-            <div class="tag-group">
-                <span class="tag">Log Analytics</span>
-                <span class="tag">Backup</span>
+            <h3>Observability Setup</h3>
+            <p>Implemented Azure Monitor and Log Analytics workspaces to track real-time health and performance metrics across cloud resources.</p>
+        </div>
+
+        <div class="card project-card-small">
+            <img src="selenium-testing.png" alt="Selenium Automation" class="project-img">
+            <h3>Automation Suite</h3>
+            <p>Built a reusable Selenium framework that improved regression testing efficiency by 40% for global enterprise applications.</p>
+        </div>
+    </div>
+
+    <h2 id="experience">Experience</h2>
+    <div class="bento-grid" style="grid-auto-rows: auto;">
+        <div class="card hero-card" style="grid-column: span 4; margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                <div>
+                    <h3>Quality Assurance Associate</h3>
+                    <p style="color: var(--accent); font-weight: 700;">Picnic GmbH, Berlin</p>
+                </div>
+                <span class="cert-status">2025 – Present</span>
             </div>
+            <p style="margin-top: 15px;">Driving operational stability and system validation in high-volume logistics. Supporting faster incident resolution to maintain strict SLA compliance.</p>
+        </div>
+        
+        <div class="card hero-card" style="grid-column: span 2;">
+            <h3>Working Student - Software Quality</h3>
+            <p style="color: var(--accent); font-weight: 700;">BHT University, Berlin</p>
+            <p style="margin-top: 10px;">Validated system functionality through 500+ manual and automated test cases. Supported cross-functional debugging workflows.</p>
         </div>
 
-        <div class="bento-card project-card">
-            <h3>Test Automation</h3>
-            <p>Developed a Python/Selenium framework that scaled to 200+ automated scripts. Reduced manual regression testing time by 75% for enterprise applications.</p>
-            <div class="tag-group">
-                <span class="tag">Selenium</span>
-                <span class="tag">Python</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="section-header">
-        <h2>Experience</h2>
-    </div>
-
-    <div class="exp-row">
-        <div class="exp-time">2025 — Present</div>
-        <div class="exp-details">
-            <h4>Quality Assurance Associate</h4>
-            <span>Picnic GmbH, Berlin</span>
-            <p>Supporting system reliability and operational SLAs within a complex logistics ecosystem. Focus on rapid incident resolution and system validation.</p>
+        <div class="card hero-card" style="grid-column: span 2;">
+            <h3>Software Tester (Automation)</h3>
+            <p style="color: var(--accent); font-weight: 700;">Hexaware Technologies</p>
+            <p style="margin-top: 10px;">Engineered 200+ Selenium scripts, increasing test scalability and reliability for international stakeholders.</p>
         </div>
     </div>
 
-    <div class="exp-row">
-        <div class="exp-time">2023 — 2024</div>
-        <div class="exp-details">
-            <h4>Software Testing (Working Student)</h4>
-            <span>BHT University, Berlin</span>
-            <p>Managed 500+ test cases for university software. Bridged the gap between development and end-user requirements through rigorous debugging.</p>
-        </div>
-    </div>
-
-    <div class="exp-row">
-        <div class="exp-time">2022 — 2023</div>
-        <div class="exp-details">
-            <h4>Software Tester</h4>
-            <span>Hexaware Technologies, India</span>
-            <p>Engineered automated testing workflows that increased coverage by 40%. Delivered high-quality code validation for international stakeholders.</p>
-        </div>
-    </div>
-
-    <div class="hero-grid" style="margin-top: 60px;">
-        <div class="bento-card">
-            <h3 style="margin-bottom: 20px;">Education</h3>
-            <div style="margin-bottom: 20px;">
-                <strong>M.Sc. IT Management</strong><br>
-                <small>BSBI Berlin | 2022 - 2024</small>
-            </div>
-            <div>
-                <strong>B.Computer Science & Engineering</strong><br>
-                <small>Anna University | 2017 - 2021</small>
-            </div>
-        </div>
-        <div class="bento-card">
-            <h3 style="margin-bottom: 20px;">Core Skills</h3>
-            <div class="tag-group">
-                <span class="tag">Microsoft Azure</span>
-                <span class="tag">Linux/Ubuntu</span>
-                <span class="tag">Infrastructure as Code</span>
-                <span class="tag">Incident Management</span>
-                <span class="tag">Selenium</span>
-                <span class="tag">Git/GitHub</span>
-                <span class="tag">Jira</span>
-                <span class="tag">SQL</span>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <p>© 2026 Aarthi Shree Chandiran • Berlin, Germany</p>
-        <p style="margin-top: 10px; font-size: 0.75rem;">Visa Status: Jobseeker (Valid until Aug 2026)</p>
+    <footer style="text-align: center; padding: 60px 0; color: var(--text-dim); border-top: 1px solid var(--border);">
+        <p>© 2026 Aarthi Shree Chandiran • Master of Science (IT Management)</p>
+        <p style="font-size: 0.75rem; margin-top: 10px;">Work Authorization: Eligible to work in Germany (Jobseeker Visa valid until 2026)</p>
     </footer>
 </div>
 
