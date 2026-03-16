@@ -1,549 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aarthi Shree Chandiran | Cloud Infrastructure Portfolio</title>
-  <meta name="description" content="Portfolio of Aarthi Shree Chandiran, Azure Certified IT Professional based in Berlin specializing in cloud infrastructure, Azure administration, and IT operations." />
-
-  <style>
-    * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: #0f172a;
-      background: linear-gradient(180deg, #f8fbff 0%, #eef4ff 100%);
-      line-height: 1.6;
-    }
-
-    a {
-      color: #1d4ed8;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      display: flex;
-      justify-content: center;
-      gap: 28px;
-      padding: 14px 20px;
-      background: rgba(10, 18, 38, 0.88);
-      backdrop-filter: blur(12px);
-    }
-
-    .navbar a {
-      color: white;
-      font-size: 15px;
-      font-weight: 600;
-    }
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at top left, rgba(96, 165, 250, 0.25), transparent 30%),
-        radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.18), transparent 35%),
-        linear-gradient(135deg, #081225 0%, #10254d 45%, #1d4ed8 100%);
-      color: white;
-      padding: 88px 24px 78px;
-    }
-
-    .hero-container {
-      max-width: 1180px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 56px;
-      align-items: center;
-    }
-
-    .hero h1 {
-      margin: 0 0 10px;
-      font-size: 44px;
-      line-height: 1.08;
-      letter-spacing: -0.8px;
-    }
-
-    .hero-role {
-      font-size: 20px;
-      font-weight: 700;
-      color: #dbeafe;
-      margin-bottom: 14px;
-    }
-
-    .hero-summary {
-      max-width: 620px;
-      font-size: 16px;
-      color: rgba(255,255,255,0.92);
-      margin-bottom: 18px;
-    }
-
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    .hero-meta span {
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.16);
-      color: white;
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .buttons a {
-      display: inline-block;
-      padding: 11px 16px;
-      border-radius: 10px;
-      font-size: 14px;
-      font-weight: 700;
-      transition: transform 0.2s ease;
-    }
-
-    .buttons a:hover {
-      transform: translateY(-2px);
-      text-decoration: none;
-    }
-
-    .btn-primary {
-      background: white;
-      color: #1d4ed8;
-    }
-
-    .btn-secondary {
-      color: white;
-      border: 1px solid rgba(255,255,255,0.28);
-      background: rgba(255,255,255,0.08);
-    }
-
-    .hero-image {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .hero-image-frame {
-      width: 100%;
-      max-width: 300px;
-      padding: 10px;
-      border-radius: 22px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.26), rgba(255,255,255,0.08));
-      box-shadow: 0 18px 42px rgba(0,0,0,0.26);
-    }
-
-    .hero-image img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 16px;
-    }
-
-    .container {
-      max-width: 1120px;
-      margin: auto;
-      padding: 34px 24px 52px;
-    }
-
-    .highlights {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: -18px;
-      margin-bottom: 24px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .highlight-card {
-      background: rgba(255,255,255,0.92);
-      border: 1px solid #e2e8f0;
-      border-radius: 18px;
-      padding: 18px;
-      text-align: center;
-      box-shadow: 0 10px 24px rgba(15,23,42,0.06);
-    }
-
-    .highlight-card h3 {
-      margin: 0 0 6px;
-      color: #1d4ed8;
-      font-size: 17px;
-    }
-
-    .highlight-card p {
-      margin: 0;
-      font-size: 14px;
-      color: #475569;
-    }
-
-    .focus-banner {
-      background: linear-gradient(135deg, #0f172a, #1d4ed8);
-      color: white;
-      border-radius: 20px;
-      padding: 22px;
-      margin-bottom: 24px;
-      box-shadow: 0 14px 30px rgba(15,23,42,0.12);
-    }
-
-    .focus-banner h2 {
-      margin: 0 0 8px;
-      font-size: 24px;
-    }
-
-    .focus-banner p {
-      margin: 0;
-      color: rgba(255,255,255,0.9);
-      font-size: 15px;
-    }
-
-    .section-title {
-      margin: 0 0 14px;
-      font-size: 26px;
-      color: #0f172a;
-    }
-
-    .section-subtitle {
-      margin: -4px 0 18px;
-      color: #64748b;
-      font-size: 15px;
-    }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-bottom: 26px;
-    }
-
-    .project {
-      background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 12px 28px rgba(15,23,42,0.06);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      min-height: 430px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .project:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 18px 36px rgba(15,23,42,0.11);
-    }
-
-    .project.featured {
-      grid-column: span 2;
-      background: linear-gradient(135deg, #0f172a, #1e3a8a);
-      color: white;
-    }
-
-    .project img {
-      width: 100%;
-      height: 210px;
-      object-fit: cover;
-      display: block;
-      background: #f8fafc;
-    }
-
-    .project-content {
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      flex: 1;
-    }
-
-    .project-content h3 {
-      margin: 0;
-      font-size: 20px;
-      line-height: 1.25;
-      color: inherit;
-    }
-
-    .project-content p {
-      margin: 0;
-      font-size: 15px;
-      color: inherit;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: auto;
-    }
-
-    .tags span {
-      background: #f1f5f9;
-      color: #334155;
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-    .project.featured .tags span {
-      background: rgba(255,255,255,0.12);
-      color: white;
-      border: 1px solid rgba(255,255,255,0.18);
-    }
-
-    .project.featured a,
-    .project.featured p,
-    .project.featured h3 {
-      color: white;
-    }
-
-    .experience {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      margin-bottom: 24px;
-    }
-
-    .exp-card {
-      background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 18px;
-      padding: 18px;
-      box-shadow: 0 10px 24px rgba(15,23,42,0.05);
-    }
-
-    .exp-card h3 {
-      margin: 0 0 6px;
-      font-size: 18px;
-    }
-
-    .exp-card .meta {
-      margin: 0 0 8px;
-      color: #64748b;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .exp-card p {
-      margin: 0;
-      color: #334155;
-      font-size: 14px;
-    }
-
-    .contact {
-      background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 20px;
-      padding: 22px;
-      text-align: center;
-      box-shadow: 0 10px 24px rgba(15,23,42,0.05);
-    }
-
-    .contact h2 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 24px;
-    }
-
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 16px;
-      font-size: 15px;
-    }
-
-    footer {
-      text-align: center;
-      color: #64748b;
-      font-size: 13px;
-      padding: 18px 20px 26px;
-    }
-
-    @media (max-width: 900px) {
-      .hero-container,
-      .highlights,
-      .projects,
-      .experience {
-        grid-template-columns: 1fr;
-      }
-
-      .project.featured {
-        grid-column: span 1;
-      }
-
-      .navbar {
-        gap: 18px;
-        flex-wrap: wrap;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <nav class="navbar">
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <section class="hero">
-    <div class="hero-container">
-      <div>
-        <h1>Aarthi Shree Chandiran</h1>
-        <div class="hero-role">Azure Certified IT Professional</div>
-        <p class="hero-summary">
-          Building hands-on experience in Azure infrastructure, monitoring, and cloud operations through practical deployment and automation projects.
-        </p>
-
-        <div class="hero-meta">
-          <span>Berlin</span>
-          <span>AZ-900 Certified</span>
-          <span>AZ-104 In Progress</span>
-        </div>
-
-        <div class="buttons">
-          <a class="btn-primary" href="Aarthi_Shree_Chandiran_CV.pdf" target="_blank">Download CV</a>
-          <a class="btn-secondary" href="https://linkedin.com/in/aarthi-shree-chandiran" target="_blank">LinkedIn</a>
-          <a class="btn-secondary" href="https://github.com/aarthi-shree-chandiran" target="_blank">GitHub</a>
-        </div>
-      </div>
-
-      <div class="hero-image">
-        <div class="hero-image-frame">
-          <img src="profile.jpg" alt="Aarthi Shree Chandiran" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="container">
-
-    <section class="highlights">
-      <div class="highlight-card">
-        <h3>Cloud Focus</h3>
-        <p>Azure Infrastructure & Monitoring</p>
-      </div>
-      <div class="highlight-card">
-        <h3>Experience</h3>
-        <p>Testing & Troubleshooting</p>
-      </div>
-      <div class="highlight-card">
-        <h3>Work Status</h3>
-        <p>Eligible to work in Germany</p>
-      </div>
-    </section>
-
-    <section class="focus-banner">
-      <h2>Focused on Azure Administration & Cloud Operations</h2>
-      <p>Building practical experience through Azure infrastructure labs, monitoring workflows, and automation projects.</p>
-    </section>
-
-    <h2 class="section-title">Selected Projects</h2>
-    <p class="section-subtitle">Hands-on Azure and automation work focused on deployment, monitoring, and operational reliability.</p>
-
-    <section class="projects" id="projects">
-      <div class="project featured">
-        <img src="azure-vm-architecture.png" alt="Azure VM Architecture" />
-        <div class="project-content">
-          <h3>Azure Infrastructure Deployment</h3>
-          <p>Built a secure Azure VM environment with networking, access control, and connectivity validation.</p>
-          <p><strong>Outcome:</strong> Built a practical Azure lab for secure compute, networking, and access-control practice.</p>
-          <div class="tags">
-            <span>Azure VM</span>
-            <span>VNet</span>
-            <span>RBAC</span>
-          </div>
-          <a href="https://github.com/aarthi-shree-chandiran" target="_blank">View Project →</a>
-        </div>
-      </div>
-
-      <div class="project">
-        <img src="azure-monitoring.png" alt="Azure Monitoring Architecture" />
-        <div class="project-content">
-          <h3>Azure Monitoring</h3>
-          <p>Configured monitoring and backup workflows for resource visibility and recovery readiness.</p>
-          <p><strong>Outcome:</strong> Created a monitoring and recovery workflow for better resource visibility and operational readiness.</p>
-          <div class="tags">
-            <span>Azure Monitor</span>
-            <span>Backup</span>
-          </div>
-          <a href="https://github.com/aarthi-shree-chandiran" target="_blank">View Project →</a>
-        </div>
-      </div>
-
-      <div class="project">
-        <img src="selenium-testing.png" alt="Selenium Automation" />
-        <div class="project-content">
-          <h3>Selenium Automation</h3>
-          <p>Created reusable Selenium automation scripts for regression testing and validation workflows.</p>
-          <p><strong>Outcome:</strong> Improved testing efficiency through reusable automation and reduced manual validation effort.</p>
-          <div class="tags">
-            <span>Selenium</span>
-            <span>Automation</span>
-          </div>
-          <a href="https://github.com/aarthi-shree-chandiran" target="_blank">View Project →</a>
-        </div>
-      </div>
-    </section>
-
-    <h2 class="section-title">Experience</h2>
-
-    <section class="experience" id="experience">
-      <div class="exp-card">
-        <h3>Quality Assurance Associate</h3>
-        <div class="meta">Picnic GmbH · 2025</div>
-        <p>Supported system validation, issue resolution, and SLA-focused operational reliability.</p>
-      </div>
-
-      <div class="exp-card">
-        <h3>Warehouse Operations Associate</h3>
-        <div class="meta">Amazon · 2024–2025</div>
-        <p>Worked in a performance-driven operational environment with strong workflow discipline.</p>
-      </div>
-
-      <div class="exp-card">
-        <h3>Working Student – Software Testing</h3>
-        <div class="meta">BHT University · 2023–2024</div>
-        <p>Executed 500+ test cases and supported debugging and test documentation workflows.</p>
-      </div>
-
-      <div class="exp-card">
-        <h3>Software Tester</h3>
-        <div class="meta">Hexaware Technologies · 2022–2023</div>
-        <p>Developed 200+ Selenium automation scripts to improve regression testing efficiency.</p>
-      </div>
-    </section>
-
-    <section class="contact" id="contact">
-      <h2>Contact</h2>
-      <div class="contact-links">
-        <a href="mailto:aarthishreechandiran@gmail.com">Email</a>
-        <a href="https://linkedin.com/in/aarthi-shree-chandiran" target="_blank">LinkedIn</a>
-        <a href="https://github.com/aarthi-shree-chandiran" target="_blank">GitHub</a>
-      </div>
-    </section>
-
-  </div>
-
-  <footer>
-    © 2026 Aarthi Shree Chandiran · Cloud Infrastructure Portfolio
-  </footer>
-</body>
-</html>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aarthi Shree Chandiran | Cloud Infrastructure Portfolio</title>
+    <meta name="description" content="Portfolio of Aarthi Shree Chandiran, Azure Certified IT Professional based in Berlin specializing in cloud infrastructure, administration, and IT operations." />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg-dark: #0f172a;
+            --bg-body: #f8fafc;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Navigation --- */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1.2rem;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .navbar a {
+            color: #cbd5e1;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05rem;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover { color: white; }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: 180px 24px 100px;
+            background: radial-gradient(circle at 0% 0%, rgba(37, 99, 235, 0.18) 0%, transparent 40%),
+                        radial-gradient(circle at 100% 100%, rgba(96, 165, 250, 0.1) 0%, transparent 40%),
+                        var(--bg-dark);
+            color: white;
+            text-align: center;
+        }
+
+        .hero-container { max-width: 850px; margin: auto; }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 14px;
+            background: rgba(37, 99, 235, 0.15);
+            border: 1px solid var(--primary);
+            color: #93c5fd;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+            background: linear-gradient(to bottom, #ffffff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-summary {
+            font-size: 1.15rem;
+            color: #94a3b8;
+            margin-bottom: 2.5rem;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-group { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary { background: var(--primary); color: white; border: 1px solid var(--primary); }
+        .btn-primary:hover { background: var(--primary-hover); transform: translateY(-3px); }
+
+        .btn-outline { border: 1px solid rgba(255,255,255,0.2); color: white; }
+        .btn-outline:hover { background: rgba(255,255,255,0.05); border-color: white; }
+
+        /* --- Sections --- */
+        .container { max-width: 1140px; margin: auto; padding: 100px 24px; }
+
+        .section-header { margin-bottom: 4rem; }
+        .section-header h2 { font-size: 2.25rem; font-weight: 800; color: var(--bg-dark); margin-bottom: 0.5rem; }
+        .section-header p { color: var(--text-muted); font-size: 1.1rem; }
+
+        /* --- Project Grid --- */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+            border-color: var(--primary);
+        }
+
+        .project-img { width: 100%; height: 220px; object-fit: cover; background: #f1f5f9; }
+
+        .project-body { padding: 1.8rem; flex-grow: 1; display: flex; flex-direction: column; }
+        .project-body h3 { font-size: 1.4rem; margin-bottom: 0.8rem; font-weight: 700; }
+        .project-body p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1; }
+
+        .tag-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+        .tag {
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            background: #eff6ff;
+            color: var(--primary);
+            border-radius: 6px;
+            text-transform: uppercase;
+        }
+
+        .project-link { font-weight: 700; color: var(--primary); text-decoration: none; font-size: 0.9rem; }
+        .project-link:hover { text-decoration: underline; }
+
+        /* --- Experience Timeline --- */
+        .timeline { position: relative; max-width: 800px; margin-left: 1rem; border-left: 2px solid #e2e8f0; padding-left: 2.5rem; }
+        
+        .timeline-item { position: relative; margin-bottom: 3.5rem; }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -49px;
+            top: 6px;
+            width: 14px;
+            height: 14px;
+            background: white;
+            border: 3px solid var(--primary);
+            border-radius: 50%;
+        }
+
+        .exp-date { font-weight: 700; color: var(--primary); font-size: 0.85rem; display: block; margin-bottom: 0.4rem; }
+        .exp-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.2rem; }
+        .exp-company { font-weight: 600; color: var(--text-main); margin-bottom: 0.8rem; display: block; font-size: 1rem;}
+        .exp-desc { color: var(--text-muted); font-size: 0.95rem; }
+
+        /* --- Skills Section --- */
+        .skills-container {
+            background: white;
+            border-radius: 24px;
+            padding: 3rem;
+            border: 1px solid #e2e8f0;
+            display: grid
