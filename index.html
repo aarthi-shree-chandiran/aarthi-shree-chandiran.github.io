@@ -3,139 +3,223 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aarthi Shree Chandiran | Cloud Infrastructure & Operations</title>
-  <meta name="description" content="Portfolio of Aarthi Shree Chandiran, Azure Certified IT Professional based in Berlin specializing in cloud infrastructure, automation, and IT operations." />
+  <title>Aarthi Shree Chandiran | Cloud Infrastructure & Operations Portfolio</title>
+  <meta name="description" content="Professional portfolio of Aarthi Shree Chandiran, Azure Certified IT Professional based in Berlin specializing in cloud infrastructure, automation, and IT operations." />
 
   <style>
+    /* --- CSS Reset & Global Vars --- */
     :root {
-      --primary: #2563eb;
-      --primary-dark: #1d4ed8;
-      --bg-dark: #0f172a;
-      --text-main: #1e293b;
-      --text-muted: #64748b;
+      --primary: #2563eb; /* Blue 600 */
+      --primary-hover: #1d4ed8; /* Blue 700 */
+      --secondary: #93c5fd; /* Blue 300 */
+      --bg-dark: #0f172a; /* Slate 900 */
+      --text-main: #1e293b; /* Slate 800 */
+      --text-muted: #64748b; /* Slate 500 */
+      --glass: rgba(255, 255, 255, 0.05);
+      --glass-border: rgba(255, 255, 255, 0.1);
+      --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
 
     body {
-      margin: 0;
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       color: var(--text-main);
-      background: #f8fafc;
+      background-color: #f8fafc;
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
-    /* --- Navbar Updates --- */
+    /* --- Sophisticated Navigation --- */
     .navbar {
-      position: sticky;
+      position: fixed;
       top: 0;
+      width: 100%;
       z-index: 1000;
       display: flex;
       justify-content: center;
-      gap: 32px;
+      gap: 30px;
       padding: 18px 20px;
-      background: rgba(15, 23, 42, 0.9);
+      background: rgba(15, 23, 42, 0.85);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid var(--glass-border);
     }
 
     .navbar a {
       color: #cbd5e1;
-      font-size: 14px;
+      font-size: 0.85rem;
       font-weight: 600;
       text-decoration: none;
-      transition: color 0.3s ease;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 1px;
+      transition: color 0.3s ease;
     }
 
     .navbar a:hover { color: white; }
 
-    /* --- Enhanced Hero --- */
+    /* --- Modernized Hero Section --- */
     .hero {
-      padding: 120px 24px 100px;
+      padding: 180px 24px 100px;
       background: 
-        radial-gradient(circle at 0% 0%, rgba(37, 99, 235, 0.2), transparent 40%),
+        radial-gradient(circle at 10% 10%, rgba(37, 99, 235, 0.15) 0%, transparent 30%),
+        radial-gradient(circle at 90% 90%, rgba(96, 165, 250, 0.1) 0%, transparent 30%),
         var(--bg-dark);
       color: white;
-      text-align: center;
     }
 
     .hero-container {
-      max-width: 900px;
+      max-width: 1100px;
       margin: auto;
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 60px;
+      align-items: center;
     }
 
-    .hero h1 {
-      font-size: clamp(2.5rem, 5vw, 3.5rem);
+    .hero-content h1 {
+      font-size: clamp(2.5rem, 5vw, 3.8rem);
       font-weight: 800;
-      margin-bottom: 1rem;
-      letter-spacing: -1px;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+      letter-spacing: -2px;
     }
 
     .hero-role {
       font-size: 1.25rem;
-      color: #93c5fd;
+      color: var(--secondary);
       font-weight: 600;
       margin-bottom: 1.5rem;
     }
 
+    .hero-summary {
+      font-size: 1.1rem;
+      color: #94a3b8;
+      margin-bottom: 2.5rem;
+      max-width: 600px;
+    }
+
     .hero-meta {
       display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 2.5rem;
     }
 
     .hero-meta span {
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.2);
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
       padding: 6px 14px;
       border-radius: 50px;
-      font-size: 13px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: white;
     }
 
+    .hero-actions { display: flex; gap: 15px; }
+
     .btn {
-      padding: 12px 24px;
+      padding: 12px 28px;
       border-radius: 8px;
       font-weight: 700;
       text-decoration: none;
-      transition: transform 0.2s, background 0.2s;
-      display: inline-block;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
     }
 
-    .btn-primary { background: var(--primary); color: white; }
-    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); }
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      border: 1px solid var(--primary);
+    }
 
-    .btn-secondary { border: 1px solid rgba(255,255,255,0.3); color: white; margin-left: 10px; }
-    .btn-secondary:hover { background: rgba(255,255,255,0.1); }
+    .btn-primary:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+    }
 
-    /* --- Sections --- */
-    .container { max-width: 1100px; margin: auto; padding: 80px 24px; }
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.2);
+      color: white;
+    }
 
-    .section-title { font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem; }
-    .section-subtitle { color: var(--text-muted); margin-bottom: 3rem; }
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,255,255,0.5);
+    }
 
-    /* --- Tech Stack Grid (New for Intermediate) --- */
+    /* --- Photo Integration --- */
+    .hero-image-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image-frame {
+      max-width: 320px;
+      padding: 12px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.02));
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-image-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 16px;
+      filter: grayscale(10%) contrast(105%);
+    }
+
+    /* --- Global Section Styling --- */
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 100px 24px;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--bg-dark);
+      margin-bottom: 0.5rem;
+      letter-spacing: -1px;
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 4rem;
+    }
+
+    /* --- Refined Skills Grid --- */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 15px;
-      margin-bottom: 80px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      margin-bottom: 100px;
     }
 
     .skill-card {
       background: white;
       border: 1px solid #e2e8f0;
-      padding: 20px;
-      border-radius: 12px;
+      padding: 25px;
+      border-radius: 16px;
       text-align: center;
-      font-weight: 700;
-      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      box-shadow: var(--card-shadow);
     }
 
-    /* --- Project Cards --- */
+    .skill-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-5px);
+    }
+
+    .skill-card h3 { font-size: 1.1rem; margin-bottom: 5px; color: var(--bg-dark); }
+    .skill-card p { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
+
+    /* --- Enhanced Project Cards --- */
     .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -145,65 +229,108 @@
     .project {
       background: white;
       border: 1px solid #e2e8f0;
-      border-radius: 16px;
+      border-radius: 20px;
       overflow: hidden;
-      transition: all 0.3s ease;
+      transition: all 0.4s ease;
+      box-shadow: var(--card-shadow);
       display: flex;
       flex-direction: column;
     }
 
     .project:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+      transform: translateY(-12px);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+      border-color: var(--primary);
     }
 
-    .project img { width: 100%; height: 200px; object-fit: cover; }
+    .project img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      background-color: #f1f5f9;
+    }
 
-    .project-content { padding: 24px; flex-grow: 1; }
-    .project-content h3 { font-size: 1.25rem; margin-top: 0; }
-    .project-content p { font-size: 0.95rem; color: var(--text-muted); }
+    .project-content {
+      padding: 25px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
 
-    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
+    .project-content h3 { font-size: 1.4rem; margin-top: 0; margin-bottom: 10px; font-weight: 700; }
+    .project-content p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 20px; flex-grow: 1; }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
     .tag {
-      background: #f1f5f9;
+      background: #eff6ff; /* Blue 50 */
       color: var(--primary);
-      padding: 4px 10px;
+      padding: 4px 12px;
       border-radius: 6px;
-      font-size: 11px;
+      font-size: 0.7rem;
       font-weight: 700;
       text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
-    /* --- Experience Timeline --- */
-    .experience-list { border-left: 2px solid #e2e8f0; padding-left: 30px; position: relative; }
-    .exp-item { position: relative; margin-bottom: 40px; }
+    /* --- Timeline Experience --- */
+    .experience-list {
+      max-width: 800px;
+      margin-left: 1rem;
+      border-left: 2px solid #e2e8f0;
+      padding-left: 30px;
+      position: relative;
+    }
+
+    .exp-item { position: relative; margin-bottom: 50px; }
     .exp-item::before {
       content: '';
       position: absolute;
       left: -41px;
-      top: 5px;
-      width: 20px;
-      height: 20px;
+      top: 6px;
+      width: 18px;
+      height: 18px;
       background: white;
       border: 4px solid var(--primary);
       border-radius: 50%;
     }
 
-    .exp-item h3 { margin: 0; font-size: 1.2rem; }
-    .exp-item .meta { color: var(--primary); font-weight: 700; font-size: 14px; }
+    .exp-item .meta { color: var(--primary); font-weight: 700; font-size: 0.9rem; margin-bottom: 5px; display: block; }
+    .exp-item h3 { font-size: 1.3rem; margin: 0 0 5px; font-weight: 700; }
+    .exp-item .company { font-weight: 600; color: var(--text-main); font-size: 1rem; margin-bottom: 10px; display: block;}
+    .exp-item p { color: var(--text-muted); font-size: 0.95rem; }
+
+    /* --- Polished Contact Card --- */
+    .contact-card {
+      background: white;
+      border-radius: 24px;
+      padding: 60px 40px;
+      text-align: center;
+      margin-top: 100px;
+      border: 1px solid #e2e8f0;
+      box-shadow: var(--card-shadow);
+    }
+
+    .contact-card h2 { font-size: 2rem; font-weight: 800; margin-bottom: 1rem; color: var(--bg-dark); }
+    .contact-card p { color: var(--text-muted); margin-bottom: 2rem; font-size: 1.1rem; }
 
     footer {
       text-align: center;
-      padding: 40px;
+      padding: 50px;
       color: var(--text-muted);
-      font-size: 14px;
+      font-size: 0.9rem;
       border-top: 1px solid #e2e8f0;
+      margin-top: 60px;
     }
 
-    @media (max-width: 768px) {
-      .hero-meta { flex-direction: column; align-items: center; }
-      .btn-secondary { margin-left: 0; margin-top: 10px; width: 100%; }
-      .btn-primary { width: 100%; }
+    /* --- Responsiveness Updates --- */
+    @media (max-width: 900px) {
+      .navbar { gap: 15px; }
+      .hero { padding: 140px 24px 80px; }
+      .hero-container { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+      .hero-content { display: flex; flex-direction: column; align-items: center; }
+      .hero-meta { justify-content: center; }
+      .hero-image-frame { max-width: 260px; }
+      .container { padding: 60px 24px; }
     }
   </style>
 </head>
@@ -211,125 +338,154 @@
 
   <nav class="navbar">
     <a href="#skills">Tech Stack</a>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
+    <a href="#projects">Work</a>
+    <a href="#experience">History</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <header class="hero">
     <div class="hero-container">
-      <h1>Aarthi Shree Chandiran</h1>
-      <div class="hero-role">Azure Certified IT Professional</div>
-      <p class="hero-summary">
-        Specializing in building and managing secure Azure environments. 
-        Passionate about Infrastructure as Code, Monitoring, and Operational Reliability.
-      </p>
+      <div class="hero-content">
+        <h1>Aarthi Shree Chandiran</h1>
+        <div class="hero-role">Azure Certified IT Professional</div>
+        <p class="hero-summary">
+          Specializing in automated, secure, and resilient cloud infrastructure. Based in Berlin, focused on Azure Administration and operational excellence.
+        </p>
 
-      <div class="hero-meta">
-        <span>📍 Berlin, Germany</span>
-        <span>✅ AZ-900 Certified</span>
-        <span>⚡ AZ-104 In Progress</span>
+        <div class="hero-meta">
+          <span>📍 Berlin</span>
+          <span>✅ AZ-900 Certified</span>
+          <span>⚡ AZ-104 In Progress</span>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="Aarthi_Shree_Chandiran_CV.pdf" target="_blank">Download CV</a>
+          <a class="btn btn-outline" href="https://linkedin.com/in/aarthi-shree-chandiran">Connect</a>
+        </div>
       </div>
 
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="Aarthi_Shree_Chandiran_CV.pdf" target="_blank">Download CV</a>
-        <a class="btn btn-secondary" href="https://linkedin.com/in/aarthi-shree-chandiran">LinkedIn</a>
+      <div class="hero-image-container">
+        <div class="hero-image-frame">
+          <img src="profile.jpg" alt="Aarthi Shree Chandiran" />
+        </div>
       </div>
     </div>
   </header>
 
-  <div class="container">
+  <main class="container">
     
-    <h2 class="section-title" id="skills">Technical Expertise</h2>
-    <p class="section-subtitle">Core technologies I use to manage and automate cloud infrastructure.</p>
+    <h2 class="section-title" id="skills">Technical Stack</h2>
+    <p class="section-subtitle">The tools and frameworks I use to manage cloud environments.</p>
     
     <div class="skills-grid">
-      <div class="skill-card">Azure Admin</div>
-      <div class="skill-card">Azure Monitor</div>
-      <div class="skill-card">VNet/DNS</div>
-      <div class="skill-card">Git / GitHub</div>
-      <div class="skill-card">Selenium</div>
-      <div class="skill-card">Linux</div>
+      <div class="skill-card">
+        <h3>Azure Admin</h3>
+        <p>Entra ID, Governance, Compliance</p>
+      </div>
+      <div class="skill-card">
+        <h3>Cloud Operations</h3>
+        <p>Azure Monitor, Alerts, Backup</p>
+      </div>
+      <div class="skill-card">
+        <h3>VNet/DNS</h3>
+        <p>Subnets, NSGs, Azure Bastion</p>
+      </div>
+      <div class="skill-card">
+        <h3>Version Control</h3>
+        <p>Git / GitHub / CI Basics</p>
+      </div>
+      <div class="skill-card">
+        <h3>Automation</h3>
+        <p>Selenium (Python), Scripting</p>
+      </div>
+      <div class="skill-card">
+        <h3>Linux</h3>
+        <p>System Admin, Bash Basics</p>
+      </div>
     </div>
 
-    <h2 class="section-title" id="projects">Practical Labs & Projects</h2>
-    <p class="section-subtitle">Real-world scenarios deployed and tested on Azure.</p>
+    <h2 class="section-title" id="projects">Featured Labs</h2>
+    <p class="section-subtitle">Real-world scenarios deployed and maintained on Azure.</p>
 
     <div class="projects">
-      <div class="project">
-        <img src="azure-vm-architecture.png" alt="Azure Architecture">
+      <article class="project">
+        <img src="azure-vm-architecture.png" alt="Azure Architecture Lab">
         <div class="project-content">
           <h3>Secure Multi-Tier Network</h3>
-          <p>Configured a secure VNet with NSGs, private subnets, and Azure Bastion to demonstrate the principle of least privilege.</p>
+          <p>Architected a hardened VNet environment featuring isolated subnets, specialized NSG rules, and Azure Bastion for zero public exposure of critical workloads.</p>
           <div class="tags">
-            <span class="tag">Governance</span>
             <span class="tag">Security</span>
-            <span class="tag">VNet</span>
+            <span class="tag">Networking</span>
+            <span class="tag">IaaS</span>
           </div>
         </div>
-      </div>
+      </article>
 
 
 
-      <div class="project">
-        <img src="azure-monitoring.png" alt="Azure Monitor">
+      <article class="project">
+        <img src="azure-monitoring.png" alt="Azure Monitoring Setup">
         <div class="project-content">
-          <h3>Monitoring & Alerts</h3>
-          <p>Implemented Log Analytics and automated alerts for VM health, ensuring 24/7 visibility into system performance.</p>
+          <h3>Observability & Backup</h3>
+          <p>Implemented an automated Azure Monitor Log Analytics workspace and email alerts for metric spikes. Configured Recovery Services Vaults for resource protection.</p>
           <div class="tags">
-            <span class="tag">Log Analytics</span>
-            <span class="tag">Reliability</span>
+            <span class="tag">Monitoring</span>
+            <span class="tag">SRE</span>
+            <span class="tag">Governance</span>
           </div>
         </div>
-      </div>
+      </article>
 
 
 
-      <div class="project">
-        <img src="selenium-testing.png" alt="Automation">
+      <article class="project">
+        <img src="selenium-testing.png" alt="Test Automation Suite">
         <div class="project-content">
           <h3>Test Automation Suite</h3>
-          <p>Built a Selenium framework for automated browser testing, reducing manual regression efforts by over 60%.</p>
+          <p>Developed a Python-based Selenium automation framework reducing manual regression testing time by over 60% for a sample application.</p>
           <div class="tags">
             <span class="tag">Python</span>
             <span class="tag">Selenium</span>
-            <span class="tag">DevOps</span>
+            <span class="tag">QA Automation</span>
           </div>
         </div>
-      </div>
+      </article>
     </div>
 
-    <h2 class="section-title" id="experience" style="margin-top: 100px;">Experience</h2>
+    <h2 class="section-title" id="experience" style="margin-top: 120px;">Experience</h2>
     <div class="experience-list">
       <div class="exp-item">
-        <div class="meta">Picnic GmbH | 2025</div>
+        <span class="meta">2025 – Present</span>
         <h3>Quality Assurance Associate</h3>
-        <p>Optimizing system validation workflows and supporting high-availability operational standards.</p>
+        <span class="company">Picnic GmbH, Berlin</span>
+        <p>Optimizing system validation workflows and supporting high-availability operational standards within a dynamic logistics environment.</p>
       </div>
 
       <div class="exp-item">
-        <div class="meta">BHT University | 2023 – 2024</div>
+        <span class="meta">2023 – 2024</span>
         <h3>Working Student – Software Testing</h3>
-        <p>Executed 500+ test cases, identifying critical bugs and supporting cross-functional debugging teams.</p>
+        <span class="company">BHT University, Berlin</span>
+        <p>Executed 500+ manual and automated test cases, supporting cross-functional debugging and quality reporting.</p>
       </div>
 
       <div class="exp-item">
-        <div class="meta">Hexaware Technologies | 2022 – 2023</div>
+        <span class="meta">2022 – 2023</span>
         <h3>Software Tester</h3>
-        <p>Architected 200+ automated scripts, improving regression efficiency and delivery speed for major stakeholders.</p>
+        <span class="company">Hexaware Technologies</span>
+        <p>Architected Selenium automation suites, significantly enhancing regression testing efficiency for client deliverables.</p>
       </div>
     </div>
 
-    <div id="contact" style="text-align: center; margin-top: 80px; padding: 40px; background: white; border-radius: 20px; border: 1px solid #e2e8f0;">
-      <h2 style="margin-top:0">Let's Connect</h2>
-      <p>I am looking for new opportunities in Cloud Infrastructure and Operations.</p>
+    <section id="contact" class="contact-card">
+      <h2>Let's Connect</h2>
+      <p>I am seeking opportunities in Azure Infrastructure and IT Operations in Berlin.</p>
       <a href="mailto:aarthishreechandiran@gmail.com" class="btn btn-primary">Send Email</a>
-    </div>
+    </section>
 
-  </div>
+  </main>
 
   <footer>
-    © 2026 Aarthi Shree Chandiran • Designed for the Cloud
+    <p>© 2026 Aarthi Shree Chandiran • Cloud Professional based in Berlin</p>
   </footer>
 </body>
 </html>
