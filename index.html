@@ -1,197 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aarthi Shree Chandiran | Cloud Infrastructure Portfolio</title>
-    <meta name="description" content="Portfolio of Aarthi Shree Chandiran, Azure Certified IT Professional based in Berlin specializing in cloud infrastructure, administration, and IT operations." />
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aarthi Shree Chandiran | Portfolio</title>
     <style>
-        :root {
-            --primary: #2563eb;
-            --primary-hover: #1d4ed8;
-            --bg-dark: #0f172a;
-            --bg-body: #f8fafc;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --glass-border: rgba(255, 255, 255, 0.1);
-        }
+        body { font-family: sans-serif; margin: 0; padding: 0; background: #f8fafc; color: #1e293b; }
+        nav { background: #0f172a; padding: 1rem; text-align: center; position: sticky; top: 0; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+        .hero { background: #0f172a; color: white; padding: 100px 20px; text-align: center; }
+        .container { max-width: 1000px; margin: auto; padding: 50px 20px; }
+        .card { background: white; border: 1px solid #e2e8f0; padding: 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        .tag { background: #dbeafe; color: #1e4ed8; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; margin-right: 5px; }
+        h2 { color: #0f172a; border-bottom: 2px solid #2563eb; display: inline-block; padding-bottom: 5px; }
+        .btn { background: #2563eb; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block; margin-top: 20px; }
+    </style>
+</head>
+<body>
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
+<nav>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="mailto:aarthishreechandiran@gmail.com">Contact</a>
+</nav>
 
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text-main);
-            background-color: var(--bg-body);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+<div class="hero">
+    <h1>Aarthi Shree Chandiran</h1>
+    <p>Azure Certified IT Professional | Berlin</p>
+    <a href="https://linkedin.com/in/aarthi-shree-chandiran" class="btn">Connect on LinkedIn</a>
+</div>
 
-        /* --- Navigation --- */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            padding: 1.2rem;
-            background: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--glass-border);
-        }
+<div class="container" id="projects">
+    <h2>Featured Projects</h2>
+    
+    <div class="card">
+        <h3>Azure Secure Infrastructure</h3>
+        <div><span class="tag">Azure</span><span class="tag">Networking</span></div>
+        <p>Built a secure VNet with NSGs and Bastion access for enterprise-grade security.</p>
+    </div>
 
-        .navbar a {
-            color: #cbd5e1;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 0.05rem;
-            transition: 0.3s;
-        }
+    
 
-        .navbar a:hover { color: white; }
+    <div class="card">
+        <h3>Cloud Monitoring Setup</h3>
+        <div><span class="tag">Azure Monitor</span><span class="tag">Alerting</span></div>
+        <p>Implemented Log Analytics and automated alerts for system health tracking.</p>
+    </div>
 
-        /* --- Hero Section --- */
-        .hero {
-            padding: 180px 24px 100px;
-            background: radial-gradient(circle at 0% 0%, rgba(37, 99, 235, 0.18) 0%, transparent 40%),
-                        radial-gradient(circle at 100% 100%, rgba(96, 165, 250, 0.1) 0%, transparent 40%),
-                        var(--bg-dark);
-            color: white;
-            text-align: center;
-        }
+    <h2 id="experience" style="margin-top:40px;">Work History</h2>
+    <div class="card">
+        <strong>Picnic GmbH (2025)</strong>
+        <p>Quality Assurance Associate - System reliability and SLA management.</p>
+    </div>
+    <div class="card">
+        <strong>BHT University (2023-2024)</strong>
+        <p>Software Testing - Managed 500+ automated and manual test cases.</p>
+    </div>
+</div>
 
-        .hero-container { max-width: 850px; margin: auto; }
+<footer style="text-align: center; padding: 40px; color: #64748b;">
+    &copy; 2026 Aarthi Shree Chandiran
+</footer>
 
-        .badge {
-            display: inline-block;
-            padding: 6px 14px;
-            background: rgba(37, 99, 235, 0.15);
-            border: 1px solid var(--primary);
-            color: #93c5fd;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.02em;
-            background: linear-gradient(to bottom, #ffffff, #94a3b8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-summary {
-            font-size: 1.15rem;
-            color: #94a3b8;
-            margin-bottom: 2.5rem;
-            max-width: 650px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .btn-group { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
-
-        .btn {
-            padding: 12px 28px;
-            border-radius: 8px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: 0.3s;
-            font-size: 0.95rem;
-        }
-
-        .btn-primary { background: var(--primary); color: white; border: 1px solid var(--primary); }
-        .btn-primary:hover { background: var(--primary-hover); transform: translateY(-3px); }
-
-        .btn-outline { border: 1px solid rgba(255,255,255,0.2); color: white; }
-        .btn-outline:hover { background: rgba(255,255,255,0.05); border-color: white; }
-
-        /* --- Sections --- */
-        .container { max-width: 1140px; margin: auto; padding: 100px 24px; }
-
-        .section-header { margin-bottom: 4rem; }
-        .section-header h2 { font-size: 2.25rem; font-weight: 800; color: var(--bg-dark); margin-bottom: 0.5rem; }
-        .section-header p { color: var(--text-muted); font-size: 1.1rem; }
-
-        /* --- Project Grid --- */
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid #e2e8f0;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .project-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
-            border-color: var(--primary);
-        }
-
-        .project-img { width: 100%; height: 220px; object-fit: cover; background: #f1f5f9; }
-
-        .project-body { padding: 1.8rem; flex-grow: 1; display: flex; flex-direction: column; }
-        .project-body h3 { font-size: 1.4rem; margin-bottom: 0.8rem; font-weight: 700; }
-        .project-body p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1; }
-
-        .tag-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
-        .tag {
-            font-size: 0.7rem;
-            font-weight: 700;
-            padding: 4px 10px;
-            background: #eff6ff;
-            color: var(--primary);
-            border-radius: 6px;
-            text-transform: uppercase;
-        }
-
-        .project-link { font-weight: 700; color: var(--primary); text-decoration: none; font-size: 0.9rem; }
-        .project-link:hover { text-decoration: underline; }
-
-        /* --- Experience Timeline --- */
-        .timeline { position: relative; max-width: 800px; margin-left: 1rem; border-left: 2px solid #e2e8f0; padding-left: 2.5rem; }
-        
-        .timeline-item { position: relative; margin-bottom: 3.5rem; }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -49px;
-            top: 6px;
-            width: 14px;
-            height: 14px;
-            background: white;
-            border: 3px solid var(--primary);
-            border-radius: 50%;
-        }
-
-        .exp-date { font-weight: 700; color: var(--primary); font-size: 0.85rem; display: block; margin-bottom: 0.4rem; }
-        .exp-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.2rem; }
-        .exp-company { font-weight: 600; color: var(--text-main); margin-bottom: 0.8rem; display: block; font-size: 1rem;}
-        .exp-desc { color: var(--text-muted); font-size: 0.95rem; }
-
-        /* --- Skills Section --- */
-        .skills-container {
-            background: white;
-            border-radius: 24px;
-            padding: 3rem;
-            border: 1px solid #e2e8f0;
-            display: grid
+</body>
+</html>
