@@ -1,180 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aarthi Shree Chandiran | Cloud Portfolio</title>
-    <style>
-        /* CSS RESET & BASE STYLES */
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-            line-height: 1.6; 
-            color: #1e293b; 
-            background-color: #f1f5f9; 
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aarthi Shree Chandiran | Cloud Infrastructure & Operations</title>
+  <meta name="description" content="Portfolio of Aarthi Shree Chandiran, Azure Certified IT Professional based in Berlin specializing in cloud infrastructure, automation, and IT operations." />
 
-        /* NAVIGATION */
-        nav { 
-            background: #0f172a; 
-            padding: 1rem; 
-            position: sticky; 
-            top: 0; 
-            z-index: 1000; 
-            text-align: center;
-        }
-        nav a { color: #94a3b8; text-decoration: none; margin: 0 15px; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
-        nav a:hover { color: white; }
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --bg-dark: #0f172a;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+    }
 
-        /* HERO SECTION */
-        .hero { 
-            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); 
-            color: white; 
-            padding: 80px 20px; 
-            text-align: center; 
-        }
-        .hero h1 { font-size: 3rem; margin-bottom: 10px; letter-spacing: -1px; }
-        .hero p { font-size: 1.2rem; color: #cbd5e1; max-width: 600px; margin: 0 auto 25px; }
-        .hero-btns { display: flex; justify-content: center; gap: 15px; }
-        .btn { 
-            padding: 12px 24px; 
-            border-radius: 6px; 
-            text-decoration: none; 
-            font-weight: bold; 
-            display: inline-block; 
-            transition: 0.3s;
-        }
-        .btn-blue { background: #2563eb; color: white; }
-        .btn-blue:hover { background: #1d4ed8; }
-        .btn-outline { border: 1px solid #475569; color: white; }
-        .btn-outline:hover { background: rgba(255,255,255,0.1); }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
-        /* MAIN CONTENT */
-        .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
-        h2 { font-size: 2rem; margin-bottom: 30px; color: #0f172a; border-left: 5px solid #2563eb; padding-left: 15px; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text-main);
+      background: #f8fafc;
+      line-height: 1.6;
+    }
 
-        /* PROJECTS GRID */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 60px; }
-        .card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); border: 1px solid #e2e8f0; }
-        .card-img { width: 100%; height: 200px; background: #cbd5e1; object-fit: cover; }
-        .card-content { padding: 25px; }
-        .card-content h3 { margin-bottom: 10px; font-size: 1.3rem; }
-        .card-content p { color: #64748b; font-size: 0.95rem; margin-bottom: 20px; }
-        .tags { display: flex; flex-wrap: wrap; gap: 8px; }
-        .tag { background: #eff6ff; color: #1e4ed8; padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; }
+    /* --- Navbar Updates --- */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      padding: 18px 20px;
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
 
-        /* EXPERIENCE SECTION */
-        .exp-item { background: white; padding: 25px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #94a3b8; }
-        .exp-item.current { border-left-color: #2563eb; }
-        .exp-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-        .exp-date { color: #2563eb; font-weight: bold; font-size: 0.9rem; }
+    .navbar a {
+      color: #cbd5e1;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
 
-        /* CONTACT SECTION */
-        .contact { background: #0f172a; color: white; border-radius: 15px; padding: 50px; text-align: center; margin-top: 50px; }
-        .contact a { color: #60a5fa; text-decoration: none; font-size: 1.2rem; font-weight: bold; }
+    .navbar a:hover { color: white; }
 
-        footer { text-align: center; padding: 40px; color: #64748b; font-size: 0.9rem; }
+    /* --- Enhanced Hero --- */
+    .hero {
+      padding: 120px 24px 100px;
+      background: 
+        radial-gradient(circle at 0% 0%, rgba(37, 99, 235, 0.2), transparent 40%),
+        var(--bg-dark);
+      color: white;
+      text-align: center;
+    }
 
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 2.2rem; }
-            .hero-btns { flex-direction: column; }
-        }
-    </style>
+    .hero-container {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -1px;
+    }
+
+    .hero-role {
+      font-size: 1.25rem;
+      color: #93c5fd;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-meta span {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 13px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.2s, background 0.2s;
+      display: inline-block;
+    }
+
+    .btn-primary { background: var(--primary); color: white; }
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); }
+
+    .btn-secondary { border: 1px solid rgba(255,255,255,0.3); color: white; margin-left: 10px; }
+    .btn-secondary:hover { background: rgba(255,255,255,0.1); }
+
+    /* --- Sections --- */
+    .container { max-width: 1100px; margin: auto; padding: 80px 24px; }
+
+    .section-title { font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .section-subtitle { color: var(--text-muted); margin-bottom: 3rem; }
+
+    /* --- Tech Stack Grid (New for Intermediate) --- */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 15px;
+      margin-bottom: 80px;
+    }
+
+    .skill-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: 700;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    }
+
+    /* --- Project Cards --- */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .project {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+    }
+
+    .project img { width: 100%; height: 200px; object-fit: cover; }
+
+    .project-content { padding: 24px; flex-grow: 1; }
+    .project-content h3 { font-size: 1.25rem; margin-top: 0; }
+    .project-content p { font-size: 0.95rem; color: var(--text-muted); }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
+    .tag {
+      background: #f1f5f9;
+      color: var(--primary);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    /* --- Experience Timeline --- */
+    .experience-list { border-left: 2px solid #e2e8f0; padding-left: 30px; position: relative; }
+    .exp-item { position: relative; margin-bottom: 40px; }
+    .exp-item::before {
+      content: '';
+      position: absolute;
+      left: -41px;
+      top: 5px;
+      width: 20px;
+      height: 20px;
+      background: white;
+      border: 4px solid var(--primary);
+      border-radius: 50%;
+    }
+
+    .exp-item h3 { margin: 0; font-size: 1.2rem; }
+    .exp-item .meta { color: var(--primary); font-weight: 700; font-size: 14px; }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: var(--text-muted);
+      font-size: 14px;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    @media (max-width: 768px) {
+      .hero-meta { flex-direction: column; align-items: center; }
+      .btn-secondary { margin-left: 0; margin-top: 10px; width: 100%; }
+      .btn-primary { width: 100%; }
+    }
+  </style>
 </head>
 <body>
 
-    <nav>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="mailto:aarthishreechandiran@gmail.com">Contact</a>
-    </nav>
+  <nav class="navbar">
+    <a href="#skills">Tech Stack</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-    <header class="hero">
-        <div class="hero-container">
-            <h1>Aarthi Shree Chandiran</h1>
-            <p>Azure Certified IT Professional specializing in Cloud Infrastructure, Automation, and Operations.</p>
-            <div class="hero-btns">
-                <a href="https://linkedin.com/in/aarthi-shree-chandiran" class="btn btn-blue" target="_blank">LinkedIn</a>
-                <a href="https://github.com/aarthi-shree-chandiran" class="btn btn-outline" target="_blank">GitHub</a>
-            </div>
+  <header class="hero">
+    <div class="hero-container">
+      <h1>Aarthi Shree Chandiran</h1>
+      <div class="hero-role">Azure Certified IT Professional</div>
+      <p class="hero-summary">
+        Specializing in building and managing secure Azure environments. 
+        Passionate about Infrastructure as Code, Monitoring, and Operational Reliability.
+      </p>
+
+      <div class="hero-meta">
+        <span>📍 Berlin, Germany</span>
+        <span>✅ AZ-900 Certified</span>
+        <span>⚡ AZ-104 In Progress</span>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="Aarthi_Shree_Chandiran_CV.pdf" target="_blank">Download CV</a>
+        <a class="btn btn-secondary" href="https://linkedin.com/in/aarthi-shree-chandiran">LinkedIn</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    
+    <h2 class="section-title" id="skills">Technical Expertise</h2>
+    <p class="section-subtitle">Core technologies I use to manage and automate cloud infrastructure.</p>
+    
+    <div class="skills-grid">
+      <div class="skill-card">Azure Admin</div>
+      <div class="skill-card">Azure Monitor</div>
+      <div class="skill-card">VNet/DNS</div>
+      <div class="skill-card">Git / GitHub</div>
+      <div class="skill-card">Selenium</div>
+      <div class="skill-card">Linux</div>
+    </div>
+
+    <h2 class="section-title" id="projects">Practical Labs & Projects</h2>
+    <p class="section-subtitle">Real-world scenarios deployed and tested on Azure.</p>
+
+    <div class="projects">
+      <div class="project">
+        <img src="azure-vm-architecture.png" alt="Azure Architecture">
+        <div class="project-content">
+          <h3>Secure Multi-Tier Network</h3>
+          <p>Configured a secure VNet with NSGs, private subnets, and Azure Bastion to demonstrate the principle of least privilege.</p>
+          <div class="tags">
+            <span class="tag">Governance</span>
+            <span class="tag">Security</span>
+            <span class="tag">VNet</span>
+          </div>
         </div>
-    </header>
-
-    <main class="container">
-        
-        <h2 id="projects">Technical Projects</h2>
-        <div class="grid">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=500&q=80" alt="Azure Project" class="card-img">
-                <div class="card-content">
-                    <div class="tags"><span class="tag">AZURE</span><span class="tag">NETWORKING</span></div>
-                    <h3>Secure VNet Architecture</h3>
-                    <p>Designed a multi-tier network with custom NSG rules and Bastion access to ensure zero public exposure of critical workloads.</p>
-                </div>
-            </div>
+      </div>
 
 
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1551288049-bbb653283b68?auto=format&fit=crop&w=500&q=80" alt="Monitoring" class="card-img">
-                <div class="card-content">
-                    <div class="tags"><span class="tag">MONITORING</span><span class="tag">ALERTS</span></div>
-                    <h3>Cloud Observability</h3>
-                    <p>Configured Azure Monitor and Log Analytics with automated email alerts for CPU/Memory spikes and system failures.</p>
-                </div>
-            </div>
 
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&w=500&q=80" alt="Automation" class="card-img">
-                <div class="card-content">
-                    <div class="tags"><span class="tag">PYTHON</span><span class="tag">SELENIUM</span></div>
-                    <h3>Testing Automation</h3>
-                    <p>Built a Selenium-based automation framework to run 200+ regression tests, reducing manual testing time by 75%.</p>
-                </div>
-            </div>
+      <div class="project">
+        <img src="azure-monitoring.png" alt="Azure Monitor">
+        <div class="project-content">
+          <h3>Monitoring & Alerts</h3>
+          <p>Implemented Log Analytics and automated alerts for VM health, ensuring 24/7 visibility into system performance.</p>
+          <div class="tags">
+            <span class="tag">Log Analytics</span>
+            <span class="tag">Reliability</span>
+          </div>
         </div>
+      </div>
 
-        <h2 id="experience">Professional Experience</h2>
-        
-        <div class="exp-item current">
-            <div class="exp-header">
-                <h3>Quality Assurance Associate</h3>
-                <span class="exp-date">2025 - Present</span>
-            </div>
-            <strong>Picnic GmbH, Berlin</strong>
-            <p>Supporting system validation and operational reliability for high-volume logistics.</p>
+
+
+      <div class="project">
+        <img src="selenium-testing.png" alt="Automation">
+        <div class="project-content">
+          <h3>Test Automation Suite</h3>
+          <p>Built a Selenium framework for automated browser testing, reducing manual regression efforts by over 60%.</p>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Selenium</span>
+            <span class="tag">DevOps</span>
+          </div>
         </div>
+      </div>
+    </div>
 
-        <div class="exp-item">
-            <div class="exp-header">
-                <h3>Working Student - Software Testing</h3>
-                <span class="exp-date">2023 - 2024</span>
-            </div>
-            <strong>BHT University, Berlin</strong>
-            <p>Executed over 500 test cases and managed debugging workflows for university software systems.</p>
-        </div>
+    <h2 class="section-title" id="experience" style="margin-top: 100px;">Experience</h2>
+    <div class="experience-list">
+      <div class="exp-item">
+        <div class="meta">Picnic GmbH | 2025</div>
+        <h3>Quality Assurance Associate</h3>
+        <p>Optimizing system validation workflows and supporting high-availability operational standards.</p>
+      </div>
 
-        <div class="exp-item">
-            <div class="exp-header">
-                <h3>Software Tester</h3>
-                <span class="exp-date">2022 - 2023</span>
-            </div>
-            <strong>Hexaware Technologies</strong>
-            <p>Developed Selenium automation scripts to improve testing efficiency for global enterprise clients.</p>
-        </div>
+      <div class="exp-item">
+        <div class="meta">BHT University | 2023 – 2024</div>
+        <h3>Working Student – Software Testing</h3>
+        <p>Executed 500+ test cases, identifying critical bugs and supporting cross-functional debugging teams.</p>
+      </div>
 
-        <section class="contact">
-            <h2>Let's Connect</h2>
-            <p>Interested in Cloud Infrastructure or IT Operations roles in Berlin.</p>
-            <br>
-            <a href="mailto:aarthishreechandiran@gmail.com">aarthishreechandiran@gmail.com</a>
-        </section>
+      <div class="exp-item">
+        <div class="meta">Hexaware Technologies | 2022 – 2023</div>
+        <h3>Software Tester</h3>
+        <p>Architected 200+ automated scripts, improving regression efficiency and delivery speed for major stakeholders.</p>
+      </div>
+    </div>
 
-    </main>
+    <div id="contact" style="text-align: center; margin-top: 80px; padding: 40px; background: white; border-radius: 20px; border: 1px solid #e2e8f0;">
+      <h2 style="margin-top:0">Let's Connect</h2>
+      <p>I am looking for new opportunities in Cloud Infrastructure and Operations.</p>
+      <a href="mailto:aarthishreechandiran@gmail.com" class="btn btn-primary">Send Email</a>
+    </div>
 
-    <footer>
-        <p>© 2026 Aarthi Shree Chandiran | Built for the Cloud</p>
-    </footer>
+  </div>
 
+  <footer>
+    © 2026 Aarthi Shree Chandiran • Designed for the Cloud
+  </footer>
 </body>
 </html>
