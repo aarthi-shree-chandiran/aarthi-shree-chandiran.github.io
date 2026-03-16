@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aarthi Shree Chandiran | Cloud Infrastructure & IT Management</title>
+    <title>Aarthi Shree Chandiran | Junior Cloud Engineer</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -57,7 +57,7 @@
             background: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 24px;
-            padding: 30px;
+            padding: 25px;
             position: relative;
             transition: transform 0.3s ease, border-color 0.3s ease;
         }
@@ -82,7 +82,7 @@
         }
         
         h1 { font-size: 3.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 15px; letter-spacing: -2px; }
-        .hero-sub { font-size: 1.1rem; color: var(--text-dim); max-width: 600px; margin-bottom: 30px; }
+        .hero-sub { font-size: 1.1rem; color: var(--text-dim); max-width: 650px; margin-bottom: 30px; }
         
         .btn-cv {
             display: inline-flex;
@@ -99,55 +99,57 @@
         .btn-cv:hover { background: #2563eb; box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3); }
 
         .profile-img { width: 100%; height: 100%; object-fit: cover; }
-        .project-img { width: 100%; height: 200px; object-fit: cover; border-radius: 16px; margin-bottom: 15px; border: 1px solid var(--border); }
+        .project-img { width: 100%; height: 180px; object-fit: cover; border-radius: 16px; margin-bottom: 15px; border: 1px solid var(--border); }
 
-        /* --- Icon Skills Styling --- */
-        .skills-container { display: flex; flex-wrap: wrap; gap: 15px; }
+        .skills-container { display: flex; flex-wrap: wrap; gap: 12px; }
         .skill-tag { 
-            background: rgba(255,255,255,0.03); 
+            background: rgba(255,255,255,0.02); 
             border: 1px solid var(--border); 
-            padding: 12px 20px; 
-            border-radius: 16px; 
-            font-size: 0.9rem; 
+            padding: 10px 18px; 
+            border-radius: 14px; 
+            font-size: 0.85rem; 
             font-weight: 600; 
             display: flex;
             align-items: center;
             gap: 10px;
         }
-        .skill-tag i { color: var(--accent); font-size: 1.1rem; }
+        .skill-tag i { color: var(--accent); }
 
         .cert-card { background: linear-gradient(135deg, #111827, #1e3a8a); }
-        .cert-status { color: var(--accent); font-weight: 800; font-size: 0.7rem; text-transform: uppercase; }
+        .cert-status { color: var(--accent); font-weight: 800; font-size: 0.65rem; text-transform: uppercase; }
 
         h2 { font-size: 1.8rem; margin-bottom: 30px; font-weight: 800; }
-        h3 { font-size: 1.2rem; margin-bottom: 10px; }
-        p { font-size: 0.9rem; color: var(--text-dim); }
+        h3 { font-size: 1.1rem; margin-bottom: 8px; }
+        p { font-size: 0.85rem; color: var(--text-dim); }
 
-        /* --- One-Line Experience Styling --- */
-        .exp-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            margin-bottom: 5px;
+        /* --- 4-Column Professional History --- */
+        .history-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 50px;
         }
-        .exp-title-group { display: flex; gap: 10px; align-items: center; }
-        .exp-company { color: var(--accent); font-weight: 700; }
-        .exp-date { color: var(--text-dim); font-size: 0.85rem; font-weight: 600; }
-        .exp-desc { margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 10px; }
+        .history-card {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+        .history-date { color: var(--accent); font-weight: 700; font-size: 0.75rem; margin-bottom: 5px; }
+        .history-company { color: var(--text-main); font-weight: 800; font-size: 0.95rem; margin-bottom: 10px; }
+        .history-role { color: var(--text-dim); font-size: 0.8rem; font-weight: 600; border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-bottom: 10px; }
 
         .footer-contact {
             background: var(--card-bg);
             border-top: 1px solid var(--border);
-            padding: 80px 0;
+            padding: 60px 0;
             margin-top: 100px;
             text-align: center;
         }
         .contact-grid {
             display: flex;
             justify-content: center;
-            gap: 40px;
-            margin: 30px 0;
+            gap: 30px;
+            margin: 25px 0;
             flex-wrap: wrap;
         }
         .contact-link {
@@ -157,15 +159,17 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            transition: 0.3s;
+            font-size: 0.9rem;
         }
-        .contact-link:hover { color: var(--accent); }
 
         @media (max-width: 1024px) {
-            .bento-grid { grid-template-columns: repeat(2, 1fr); }
-            .hero-card, .skills-card, .project-card-wide { grid-column: span 2; }
+            .bento-grid, .history-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero-card, .skills-card { grid-column: span 2; }
             h1 { font-size: 2.5rem; }
-            .exp-row { flex-direction: column; align-items: flex-start; gap: 5px; }
+        }
+        @media (max-width: 600px) {
+            .bento-grid, .history-grid { grid-template-columns: 1fr; }
+            .hero-card, .skills-card, .project-card-wide { grid-column: span 1; }
         }
     </style>
 </head>
@@ -175,18 +179,20 @@
     <nav>
         <div class="logo">AARTHI SHREE CHANDIRAN</div>
         <div class="nav-links">
+            <a href="#history">Experience</a>
             <a href="#projects">Work</a>
-            <a href="#experience">History</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
 
     <div class="bento-grid">
         <div class="card hero-card">
-            <div class="status-badge">● Open to New Opportunities in Berlin</div>
-            <h1>Cloud Infrastructure Engineer</h1>
-            <p class="hero-sub">M.Sc. IT Management graduate and Azure Certified professional. Specialized in cloud architecture, observability, and automated system validation.</p>
-            
+            <div class="status-badge">● Open to Roles Across Germany</div>
+            <h1>Junior Cloud Engineer</h1>
+            <p class="hero-sub">
+                Transitioning from a solid foundation as an IT Support Engineer to <strong>Junior Cloud Engineer</strong>. 
+                AZ-900 Certified and currently an active <strong>AZ-104 Progressor</strong>, specializing in Microsoft Azure architecture and automated validation.
+            </p>
             <div>
                 <a href="Aarthi_Shree_Chandiran_CV.pdf" target="_blank" class="btn-cv"><i class="fa-solid fa-file-pdf"></i> &nbsp;Download Full CV</a>
             </div>
@@ -197,7 +203,7 @@
         </div>
 
         <div class="card skills-card">
-            <h3 style="margin-bottom: 25px;">Technical Expertise</h3>
+            <h3 style="margin-bottom: 20px;">Technical Stack</h3>
             <div class="skills-container">
                 <div class="skill-tag"><i class="fa-brands fa-microsoft"></i> Microsoft Azure</div>
                 <div class="skill-tag"><i class="fa-solid fa-network-wired"></i> VNet & Subnetting</div>
@@ -225,84 +231,63 @@
             <p>Azure Fundamentals</p>
         </div>
 
-        <div class="card project-card-wide" id="projects">
+        <div class="card project-card-wide" id="projects" style="grid-row: span 2;">
             <img src="azure-vm-architecture.png" alt="Azure Architecture Lab" class="project-img">
             
-            <h3>Secure Infrastructure Deployment</h3>
-            <p>Architected a secure Azure environment with subnet isolation and VNet peering. Configured NSGs and implemented RBAC to ensure Zero Trust principles for cloud workloads.</p>
+            <h3>Secure VNet Deployment</h3>
+            <p>Architected a hardened Azure environment with subnet isolation and NSGs to ensure Zero Trust principles for cloud workloads.</p>
         </div>
 
-        <div class="card project-card-small">
+        <div class="card project-card-small" style="grid-row: span 2;">
             <img src="azure-monitoring.png" alt="Azure Monitoring" class="project-img">
-            
+             
             <h3>Cloud Observability</h3>
             <p>Deployed Azure Monitor and Log Analytics to track real-time health across IaaS resources.</p>
         </div>
 
-        <div class="card project-card-small">
+        <div class="card project-card-small" style="grid-row: span 2;">
             <img src="selenium-testing.png" alt="Selenium Automation" class="project-img">
-            <h3>Automation Framework</h3>
-            <p>Engineered a Selenium suite that reduced manual regression effort by 40%.</p>
+            <h3>Automation Suite</h3>
+            <p>Engineered a Selenium suite that reduced manual regression effort by 40% for global applications.</p>
         </div>
     </div>
 
-    <h2 id="experience">Professional History</h2>
-    <div class="bento-grid" style="grid-auto-rows: auto; gap: 15px;">
-        
-        <div class="card" style="grid-column: span 4; padding: 25px;">
-            <div class="exp-row">
-                <div class="exp-title-group">
-                    <h3>Quality Assurance Associate</h3>
-                    <span>|</span>
-                    <span class="exp-company">Picnic GmbH, Berlin</span>
-                </div>
-                <span class="exp-date">2024 – 2025</span>
-            </div>
-            <p class="exp-desc">Ensured operational stability in high-volume logistics. Focused on system validation and rapid incident resolution to maintain SLA compliance.</p>
+    <h2 id="history">Professional History</h2>
+    <div class="history-grid">
+        <div class="card history-card">
+            <span class="history-date">2024 – 2025</span>
+            <div class="history-company">Picnic GmbH, Berlin</div>
+            <div class="history-role">QA Associate</div>
+            <p>Optimized system validation and incident resolution times to maintain strict SLA compliance.</p>
         </div>
 
-        <div class="card" style="grid-column: span 4; padding: 25px;">
-            <div class="exp-row">
-                <div class="exp-title-group">
-                    <h3>Warehouse Operations Associate</h3>
-                    <span>|</span>
-                    <span class="exp-company">Amazon, Berlin</span>
-                </div>
-                <span class="exp-date">2023 – 2024</span>
-            </div>
-            <p class="exp-desc">Optimized logistics workflows and inventory management in a fast-paced fulfillment environment.</p>
+        <div class="card history-card">
+            <span class="history-date">2023 – 2024</span>
+            <div class="history-company">Amazon, Berlin</div>
+            <div class="history-role">Operations Associate</div>
+            <p>Streamlined logistics and inventory management within high-velocity fulfillment operations.</p>
         </div>
 
-        <div class="card" style="grid-column: span 4; padding: 25px;">
-            <div class="exp-row">
-                <div class="exp-title-group">
-                    <h3>Working Student - Software Quality</h3>
-                    <span>|</span>
-                    <span class="exp-company">BHT University, Berlin</span>
-                </div>
-                <span class="exp-date">2023 – 2024</span>
-            </div>
-            <p class="exp-desc">Executed 500+ test cases and supported cross-functional debugging workflows for university software systems.</p>
+        <div class="card history-card">
+            <span class="history-date">2023 – 2024</span>
+            <div class="history-company">BHT University, Berlin</div>
+            <div class="history-role">Software Quality Student</div>
+            <p>Executed 500+ test cases and supported cross-functional debugging for university systems.</p>
         </div>
 
-        <div class="card" style="grid-column: span 4; padding: 25px;">
-            <div class="exp-row">
-                <div class="exp-title-group">
-                    <h3>Software Tester (Automation)</h3>
-                    <span>|</span>
-                    <span class="exp-company">Hexaware Technologies, India</span>
-                </div>
-                <span class="exp-date">2022 – 2023</span>
-            </div>
-            <p class="exp-desc">Architected 200+ Selenium scripts, increasing testing scalability and coverage by 40% for global clients.</p>
+        <div class="card history-card">
+            <span class="history-date">2022 – 2023</span>
+            <div class="history-company">Hexaware, India</div>
+            <div class="history-role">Software Tester (Automation)</div>
+            <p>Architected 200+ Selenium scripts, increasing scalability and coverage by 40% for international clients.</p>
         </div>
     </div>
 </div>
 
 <footer class="footer-contact" id="contact">
     <div class="container">
-        <h2>Get In Touch</h2>
-        <p>Seeking Azure Administration or Cloud Infrastructure roles in Berlin.</p>
+        <h2>Connect With Me</h2>
+        <p>Available for Junior Cloud or IT Infrastructure roles throughout Germany.</p>
         
         <div class="contact-grid">
             <a href="mailto:aarthishreechandiran@gmail.com" class="contact-link"><i class="fa-solid fa-envelope"></i> aarthishreechandiran@gmail.com</a>
