@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aarthi Shree Chandiran | Cloud Infrastructure & IT Management</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --bg: #030712;
@@ -100,8 +101,20 @@
         .profile-img { width: 100%; height: 100%; object-fit: cover; }
         .project-img { width: 100%; height: 200px; object-fit: cover; border-radius: 16px; margin-bottom: 15px; border: 1px solid var(--border); }
 
-        .skills-container { display: flex; flex-wrap: wrap; gap: 10px; }
-        .skill-tag { background: rgba(255,255,255,0.03); border: 1px solid var(--border); padding: 8px 16px; border-radius: 12px; font-size: 0.85rem; font-weight: 600; }
+        /* --- Icon Skills Styling --- */
+        .skills-container { display: flex; flex-wrap: wrap; gap: 15px; }
+        .skill-tag { 
+            background: rgba(255,255,255,0.03); 
+            border: 1px solid var(--border); 
+            padding: 12px 20px; 
+            border-radius: 16px; 
+            font-size: 0.9rem; 
+            font-weight: 600; 
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .skill-tag i { color: var(--accent); font-size: 1.1rem; }
 
         .cert-card { background: linear-gradient(135deg, #111827, #1e3a8a); }
         .cert-status { color: var(--accent); font-weight: 800; font-size: 0.7rem; text-transform: uppercase; }
@@ -110,7 +123,19 @@
         h3 { font-size: 1.2rem; margin-bottom: 10px; }
         p { font-size: 0.9rem; color: var(--text-dim); }
 
-        /* --- Footer Contact Styling --- */
+        /* --- One-Line Experience Styling --- */
+        .exp-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 5px;
+        }
+        .exp-title-group { display: flex; gap: 10px; align-items: center; }
+        .exp-company { color: var(--accent); font-weight: 700; }
+        .exp-date { color: var(--text-dim); font-size: 0.85rem; font-weight: 600; }
+        .exp-desc { margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 10px; }
+
         .footer-contact {
             background: var(--card-bg);
             border-top: 1px solid var(--border);
@@ -140,6 +165,7 @@
             .bento-grid { grid-template-columns: repeat(2, 1fr); }
             .hero-card, .skills-card, .project-card-wide { grid-column: span 2; }
             h1 { font-size: 2.5rem; }
+            .exp-row { flex-direction: column; align-items: flex-start; gap: 5px; }
         }
     </style>
 </head>
@@ -158,11 +184,11 @@
     <div class="bento-grid">
         <div class="card hero-card">
             <div class="status-badge">● Open to New Opportunities in Berlin</div>
-            <h1>Cloud Infrastructure Engineer.</h1>
-            <p class="hero-sub">M.Sc. IT Management graduate and Azure Certified professional. Focused on cloud security, observability, and automated system validation.</p>
+            <h1>Cloud Infrastructure Engineer</h1>
+            <p class="hero-sub">M.Sc. IT Management graduate and Azure Certified professional. Specialized in cloud architecture, observability, and automated system validation.</p>
             
             <div>
-                <a href="Aarthi_Shree_Chandiran_CV.pdf" target="_blank" class="btn-cv">📄 Download Full CV</a>
+                <a href="Aarthi_Shree_Chandiran_CV.pdf" target="_blank" class="btn-cv"><i class="fa-solid fa-file-pdf"></i> &nbsp;Download Full CV</a>
             </div>
         </div>
 
@@ -171,18 +197,18 @@
         </div>
 
         <div class="card skills-card">
-            <h3 style="margin-bottom: 20px;">Technical Expertise</h3>
+            <h3 style="margin-bottom: 25px;">Technical Expertise</h3>
             <div class="skills-container">
-                <div class="skill-tag">Microsoft Azure</div>
-                <div class="skill-tag">VNet & Subnetting</div>
-                <div class="skill-tag">Network Security Groups (NSG)</div>
-                <div class="skill-tag">Azure Monitor & Log Analytics</div>
-                <div class="skill-tag">Backup & Disaster Recovery</div>
-                <div class="skill-tag">RBAC & Governance</div>
-                <div class="skill-tag">Linux (Ubuntu/Bash)</div>
-                <div class="skill-tag">Selenium Automation</div>
-                <div class="skill-tag">Git / GitHub Actions</div>
-                <div class="skill-tag">Python Scripting</div>
+                <div class="skill-tag"><i class="fa-brands fa-microsoft"></i> Microsoft Azure</div>
+                <div class="skill-tag"><i class="fa-solid fa-network-wired"></i> VNet & Subnetting</div>
+                <div class="skill-tag"><i class="fa-solid fa-shield-halved"></i> NSG & RBAC</div>
+                <div class="skill-tag"><i class="fa-solid fa-chart-line"></i> Azure Monitor</div>
+                <div class="skill-tag"><i class="fa-solid fa-floppy-disk"></i> Backup & DR</div>
+                <div class="skill-tag"><i class="fa-brands fa-linux"></i> Linux (Ubuntu)</div>
+                <div class="skill-tag"><i class="fa-solid fa-robot"></i> Selenium Automation</div>
+                <div class="skill-tag"><i class="fa-brands fa-github"></i> Git / GitHub Actions</div>
+                <div class="skill-tag"><i class="fa-brands fa-python"></i> Python</div>
+                <div class="skill-tag"><i class="fa-solid fa-ticket"></i> Jira & SQL</div>
             </div>
         </div>
 
@@ -190,7 +216,7 @@
             <span class="cert-status">In Progress</span>
             <h3 style="margin-top: 10px;">AZ-104</h3>
             <p>Azure Administrator Associate</p>
-            <p style="margin-top: 5px; color: rgba(255,255,255,0.6); font-size: 0.7rem;">Expected Completion: March 2026</p>
+            <p style="margin-top: 5px; color: rgba(255,255,255,0.6); font-size: 0.7rem;">Target: March 2026</p>
         </div>
 
         <div class="card">
@@ -203,46 +229,72 @@
             <img src="azure-vm-architecture.png" alt="Azure Architecture Lab" class="project-img">
             
             <h3>Secure Infrastructure Deployment</h3>
-            <p>Architected a secure Azure environment with subnet isolation and VNet peering. Configured NSGs and RBAC to ensure Zero Trust principles for cloud workloads.</p>
+            <p>Architected a secure Azure environment with subnet isolation and VNet peering. Configured NSGs and implemented RBAC to ensure Zero Trust principles for cloud workloads.</p>
         </div>
 
         <div class="card project-card-small">
             <img src="azure-monitoring.png" alt="Azure Monitoring" class="project-img">
             
             <h3>Cloud Observability</h3>
-            <p>Deployed Azure Monitor and Log Analytics to track real-time health and performance across IaaS resources.</p>
+            <p>Deployed Azure Monitor and Log Analytics to track real-time health across IaaS resources.</p>
         </div>
 
         <div class="card project-card-small">
             <img src="selenium-testing.png" alt="Selenium Automation" class="project-img">
             <h3>Automation Framework</h3>
-            <p>Engineered a Python-based Selenium suite that reduced manual regression effort by 40% for global applications.</p>
+            <p>Engineered a Selenium suite that reduced manual regression effort by 40%.</p>
         </div>
     </div>
 
     <h2 id="experience">Professional History</h2>
-    <div class="bento-grid" style="grid-auto-rows: auto;">
-        <div class="card" style="grid-column: span 4;">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                <div>
+    <div class="bento-grid" style="grid-auto-rows: auto; gap: 15px;">
+        
+        <div class="card" style="grid-column: span 4; padding: 25px;">
+            <div class="exp-row">
+                <div class="exp-title-group">
                     <h3>Quality Assurance Associate</h3>
-                    <p style="color: var(--accent); font-weight: 700;">Picnic GmbH, Berlin</p>
+                    <span>|</span>
+                    <span class="exp-company">Picnic GmbH, Berlin</span>
                 </div>
-                <span class="cert-status">2024 – 2025</span>
+                <span class="exp-date">2024 – 2025</span>
             </div>
-            <p style="margin-top: 15px;">Drove system validation and operational stability. Optimized incident resolution times to maintain strict SLA compliance in a high-volume logistics environment.</p>
+            <p class="exp-desc">Ensured operational stability in high-volume logistics. Focused on system validation and rapid incident resolution to maintain SLA compliance.</p>
         </div>
 
-        <div class="card" style="grid-column: span 2;">
-            <h3>Working Student - Software Quality</h3>
-            <p style="color: var(--accent); font-weight: 700;">BHT University, Berlin</p>
-            <p style="margin-top: 10px;">Executed 500+ test cases and supported cross-functional debugging workflows for university software systems.</p>
+        <div class="card" style="grid-column: span 4; padding: 25px;">
+            <div class="exp-row">
+                <div class="exp-title-group">
+                    <h3>Warehouse Operations Associate</h3>
+                    <span>|</span>
+                    <span class="exp-company">Amazon, Berlin</span>
+                </div>
+                <span class="exp-date">2023 – 2024</span>
+            </div>
+            <p class="exp-desc">Optimized logistics workflows and inventory management in a fast-paced fulfillment environment.</p>
         </div>
 
-        <div class="card" style="grid-column: span 2;">
-            <h3>Software Tester (Automation)</h3>
-            <p style="color: var(--accent); font-weight: 700;">Hexaware Technologies</p>
-            <p style="margin-top: 10px;">Architected 200+ Selenium automation scripts, significantly increasing testing scalability for international clients.</p>
+        <div class="card" style="grid-column: span 4; padding: 25px;">
+            <div class="exp-row">
+                <div class="exp-title-group">
+                    <h3>Working Student - Software Quality</h3>
+                    <span>|</span>
+                    <span class="exp-company">BHT University, Berlin</span>
+                </div>
+                <span class="exp-date">2023 – 2024</span>
+            </div>
+            <p class="exp-desc">Executed 500+ test cases and supported cross-functional debugging workflows for university software systems.</p>
+        </div>
+
+        <div class="card" style="grid-column: span 4; padding: 25px;">
+            <div class="exp-row">
+                <div class="exp-title-group">
+                    <h3>Software Tester (Automation)</h3>
+                    <span>|</span>
+                    <span class="exp-company">Hexaware Technologies, India</span>
+                </div>
+                <span class="exp-date">2022 – 2023</span>
+            </div>
+            <p class="exp-desc">Architected 200+ Selenium scripts, increasing testing scalability and coverage by 40% for global clients.</p>
         </div>
     </div>
 </div>
@@ -250,12 +302,12 @@
 <footer class="footer-contact" id="contact">
     <div class="container">
         <h2>Get In Touch</h2>
-        <p>Currently seeking roles in Azure Administration and Cloud Infrastructure in Berlin.</p>
+        <p>Seeking Azure Administration or Cloud Infrastructure roles in Berlin.</p>
         
         <div class="contact-grid">
-            <a href="mailto:aarthishreechandiran@gmail.com" class="contact-link">📧 aarthishreechandiran@gmail.com</a>
-            <a href="tel:+4917674199920" class="contact-link">📞 +49 176 74199920</a>
-            <a href="https://linkedin.com/in/aarthi-shree-chandiran" target="_blank" class="contact-link">🔗 LinkedIn Profile</a>
+            <a href="mailto:aarthishreechandiran@gmail.com" class="contact-link"><i class="fa-solid fa-envelope"></i> aarthishreechandiran@gmail.com</a>
+            <a href="tel:+4917674199920" class="contact-link"><i class="fa-solid fa-phone"></i> +49 176 74199920</a>
+            <a href="https://linkedin.com/in/aarthi-shree-chandiran" target="_blank" class="contact-link"><i class="fa-brands fa-linkedin"></i> LinkedIn Profile</a>
         </div>
 
         <div style="margin-top: 40px; border-top: 1px solid var(--border); padding-top: 40px;">
